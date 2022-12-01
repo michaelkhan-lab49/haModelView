@@ -1,0 +1,21 @@
+﻿{
+    "results":  [
+                    {
+                        "created_at":  "2021-10-12T04:11:56.128Z",
+                        "updated_at":  "2021-10-12T04:11:56.16Z",
+                        "version":  0,
+                        "id":  "DOM000001",
+                        "name":  "Application Review",
+                        "description":  "",
+                        "areas":  null,
+                        "createdBy":  {
+                                          "email":  "",
+                                          "system":  ""
+                                      },
+                        "updatedBy":  {
+                                          "email":  "",
+                                          "system":  ""
+                                      }
+                    }
+                ]
+}

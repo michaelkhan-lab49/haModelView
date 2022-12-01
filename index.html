@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+      integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Health Assessor Model</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="javascript:void(0);"
+                onclick="displayModel($('#modelContainer'))"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="javascript:void(0);"
+                onclick="displayTable('Topics', $('#modelContainer'))"
+                >Topics</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="javascript:void(0);"
+                onclick="displayTable('Criterias', $('#modelContainer'))"
+                >Criteria</a
+              >
+            </li>
+          </ul>
+          <!--form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form-->
+        </div>
+      </div>
+    </nav>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+      integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+      crossorigin="anonymous"
+    ></script>
+
+    <div id="modelContainer"></div>
+
+    <script>
+      const urls = [
+        "./json/areas.json",
+        "./json/topics.json",
+        "./json/criterias.json",
+      ];
+
+      var model = {
+        areas: {},
+        topics: {},
+        criterias: {},
+      };
+
+      const fetchData = async () => {
+        try {
+          let res = await Promise.all(urls.map((e) => fetch(e)));
+          let resJson = await Promise.all(res.map((e) => e.json()));
+          resJson = resJson.map((e) => e.results);
+
+          model.areas = resJson[0];
+
+          model.topics = resJson[1];
+          /*
+  model.topics = resJson[1].map((item) => {
+    return {
+      id: item.id,
+      name: item.name,
+      description: item.name,
+      areaId: item.area.id,
+      areaName: item.area.name,
+    };
+  });
+  */
+
+          model.criterias = resJson[2].map((item) => {
+            return {
+              id: item.id,
+              versionId: item.versions[0].versionId,
+              maturityLevel: item.versions[0].maturityLevel,
+              name: item.name,
+              topicId: item.topic.id,
+              topicName: item.topic.name,
+            };
+          });
+        } catch (err) {
+          console.log(err);
+        }
+      };
+
+      function sortCriterias(criterias) {
+        console.log("[sortCriterias] Criterias In");
+        console.log(criterias);
+
+        // temporary array holds objects with position
+        // and length of element
+        var maturities = criterias.map(function (e, i) {
+          return { index: i, value: e.versions[0].maturityLevel };
+        });
+
+        // sorting the lengths array containing the lengths of
+        // river names
+        maturities.sort(function (a, b) {
+          return +(a.value > b.value) || +(a.value === b.value) - 1;
+        });
+
+        // copy element back to the array
+        var sortedCriterias = maturities.map(function (e) {
+          return criterias[e.index];
+        });
+
+        console.log("[sortCriterias] Criterias Out");
+        console.log(sortedCriterias);
+
+        return sortedCriterias;
+      }
+
+      function displayModel(container) {
+        displayHierarchy("domain", "areas", model.areas, container);
+
+        for (var i = 0; i < model.areas.length; i++) {
+          const element = model.areas[i];
+          const catid = `domain-areas-${element.id}`;
+          const bodyid = `${catid}-body`;
+
+          $(`#childcount-${catid}`).text(element.topics?.length);
+
+          displayTopics(element.id, element.topics, $("#" + bodyid));
+        }
+      }
+
+      const groupBy = (keys) => (array) =>
+        array.reduce((objectsByKeyValue, obj) => {
+          const value = keys.map((key) => obj[key]).join("-");
+          objectsByKeyValue[value] = (objectsByKeyValue[value] || []).concat(
+            obj
+          );
+          return objectsByKeyValue;
+        }, {});
+
+      function displayTopics(parentid, data, container) {
+        displayHierarchy(parentid, "topics", data, container);
+
+        const groupByMaturityLevel = groupBy(["maturityLevel"]);
+
+        for (var i = 0; i < data.length; i++) {
+          const element = data[i];
+          const catid = `${parentid}-topics-${element.id}`;
+          const bodyid = `${catid}-body`;
+
+          try {
+            let criterias = model.criterias.filter(
+              (c) => c.topicId === element.id
+            );
+            $(`#childcount-${catid}`).text(criterias.length);
+
+            let maturityGroups = groupByMaturityLevel(criterias);
+
+            let rows = 0;
+
+            let g = -1;
+            while (maturityGroups[++g]) {
+              rows =
+                maturityGroups[g].length > rows
+                  ? maturityGroups[g].length
+                  : rows;
+            }
+
+            console.log(element.id);
+            console.log(maturityGroups);
+            console.log("max rows: " + rows);
+
+            let html = "";
+            html += '<table class="table table-borderless table-sm">';
+            html += "<thead>";
+            html += "<tr>";
+            //html += '<th class="text-center" scope="col">Establishing</th>';
+            //html += '<th class="text-center" scope="col">Initial</th>';
+            //html += '<th class="text-center" scope="col">Developing</th>';
+            //html += '<th class="text-center" scope="col">Defined</th>';
+            //html += '<th class="text-center" scope="col">Measurable</th>';
+            //html += '<th class="text-center" scope="col">Optimizing</th>';
+            html +=
+              '<th class="text-center h4" scope="col"><span class="badge text-bg-danger">Establishing</span></th>';
+            html +=
+              '<th class="text-center h4" scope="col"><span class="badge text-bg-secondary">Initial</span></th>';
+            html +=
+              '<th class="text-center h4" scope="col"><span class="badge text-bg-warning">Developing</span></th>';
+            html +=
+              '<th class="text-center h4" scope="col"><span class="badge text-bg-primary">Defined</span></th>';
+            html +=
+              '<th class="text-center h4" scope="col"><span class="badge text-bg-info">Measurable</span></th>';
+            html +=
+              '<th class="text-center h4" scope="col"><span class="badge text-bg-success">Optimizing</span></th>';
+            html += "</tr>";
+            html += "</thead>";
+            html += "<tbody>";
+
+            for (let r = 0; r < rows; r++) {
+              html += "<tr>";
+              for (let c = 0; c < 6; c++) {
+                let item = maturityGroups[c][r];
+
+                html += `<td class="text-center">`;
+                if (item) {
+                  let bgcolor = "bg-light";
+                  switch (item.maturityLevel) {
+                    case 0:
+                      bgcolor = "list-group-item-danger";
+                      break;
+                    case 1:
+                      bgcolor = "list-group-item-secondary";
+                      break;
+                    case 2:
+                      bgcolor = "list-group-item-warning";
+                      break;
+                    case 3:
+                      bgcolor = "list-group-item-primary";
+                      break;
+                    case 4:
+                      bgcolor = "list-group-item-info";
+                      break;
+                    case 5:
+                      bgcolor = "list-group-item-success";
+                      break;
+                    default:
+                      bgcolor = "bg-light";
+                      break;
+                  }
+                  html += `<div class="card ${bgcolor} mb-3" style="max-width: 20rem; height: 19rem;">`;
+                  html += '<div class="card-body">';
+                  html += `<h5 class="card-title">${item.id} (v${item.versionId})</h5>`;
+                  html += `<p class="card-text">${item.name}</p>`;
+                  //html += `<p class="card-text"><small class="text-muted">v${item.versionId}</small></p>`;
+                  html += "</div>";
+                  html += "</div>";
+                }
+                html += `</td>`;
+              }
+              html += "</tr>";
+            }
+            html += "</tbody>";
+            html += "</table>";
+
+            $("#" + bodyid).html(html);
+          } catch (error) {}
+        }
+      }
+
+      function displayHierarchy(parentid, category, data, container) {
+        var accordionid = `accordion-${parentid}-${category}`;
+        var div = $("<div>", {
+          id: accordionid,
+          class: "accordion",
+        });
+
+        container.append(div);
+
+        for (var i = 0; i < data.length; i++) {
+          const element = data[i];
+          const catid = `${parentid}-${category}-${element.id}`;
+          const bodyid = `${catid}-body`;
+          let expanded = "false";
+          let collapse = "collapse";
+
+          if (
+            element.name === "Technology" ||
+            element.name === "Availability"
+          ) {
+            expanded = "true";
+            collapse = "show";
+          }
+
+          html = "";
+          html += '<div class="accordion-item">';
+          html += `<h2 class="accordion-header" id="panel-heading-${catid}">`;
+          html += `<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panel-collapse-${catid}" aria-expanded="${expanded}" aria-controls="panel-collapse-${catid}">`;
+          html += `<div class="p-2">${element.id} | ${element.name}</div><span id="childcount-${catid}" class="badge bg-primary"></span>`;
+          html += "</button>";
+          html += "</h2>";
+          html += `<div id="panel-collapse-${catid}" class="accordion-collapse ${collapse}" aria-labelledby="panel-heading-${catid}" data-bs-parent="#${accordionid}">`;
+          html += `<div id="${bodyid}" class="accordion-body">`;
+          html += "</div>";
+          html += "</div>";
+          html += "</div>";
+          div.append(html);
+        }
+      }
+
+      function displayTable(name) {
+        if (name === "topics") data = model.topics;
+        if (name === "criteria") data = model.criterias;
+
+        var $table = $("<table>", {
+          id: "dataTable",
+          style: "border: 1px solid silver",
+        });
+        var $thead = $("<thead>");
+        var $tbody = $("<tbody>");
+
+        // Add some headers
+        $thead.append($("<th>", { text: "Id" }));
+        $thead.append($("<th>", { text: "Name" }));
+        $thead.append($("<th>", { text: "Description" }));
+
+        for (var i = 0; i < data.length; i++) {
+          newTr = $("<tr>");
+          newTr.append($("<td>", { text: data[i].id }));
+          newTr.append($("<td>", { text: data[i].name }));
+          newTr.append($("<td>", { text: data[i].description }));
+          $tbody.append(newTr);
+        }
+
+        $table.append($thead);
+        $table.append($tbody);
+        container.html($table);
+      }
+
+      $(() => {
+        fetchData().then(() => {
+          displayModel($("#modelContainer"));
+        });
+      });
+    </script>
+  </body>
+</html>

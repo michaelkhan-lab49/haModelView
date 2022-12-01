@@ -1,0 +1,1584 @@
+﻿{
+  "results": [
+    {
+      "created_at": "2021-10-12T04:12:08.16Z",
+      "updated_at": "2021-10-12T04:12:08.16Z",
+      "version": 0,
+      "id": "ARE000004",
+      "name": "Business",
+      "description": "",
+      "domainId": "DOM000001",
+      "domain": {
+        "created_at": "2021-10-12T04:11:56.128Z",
+        "updated_at": "2021-10-12T04:11:56.16Z",
+        "version": 0,
+        "id": "DOM000001",
+        "name": "Application Review",
+        "description": "",
+        "areas": null,
+        "createdBy": {
+          "email": "",
+          "system": ""
+        },
+        "updatedBy": {
+          "email": "",
+          "system": ""
+        }
+      },
+      "topics": [
+        {
+          "created_at": "2021-10-12T04:12:08.173Z",
+          "updated_at": "2021-12-02T06:42:33.748Z",
+          "version": 1,
+          "id": "TOP000030",
+          "name": "Reputation \u0026 Brand",
+          "description": "Development, protection and risk management regarding brand and reputation in target markets.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000004",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:08.185Z",
+          "updated_at": "2021-12-02T06:42:46.752Z",
+          "version": 1,
+          "id": "TOP000031",
+          "name": "Organisational Capability",
+          "description": "The organisation requires different skills and roles in order to perform effectively. The correct individuals and teams are organised in a way to achieve the optimum outcomes for the organisation.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000004",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:08.199Z",
+          "updated_at": "2021-12-02T06:42:55.306Z",
+          "version": 1,
+          "id": "TOP000032",
+          "name": "Strategic Alignment",
+          "description": "Defined strategy, understood, project alignment to strategy, tech alignment to strategy, tech future proofing.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000004",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:08.212Z",
+          "updated_at": "2021-12-02T06:43:01.98Z",
+          "version": 1,
+          "id": "TOP000033",
+          "name": "Financial",
+          "description": "Running costs (types of spend e.g. change, run; underspend, overspend), return (is this measured),  funding model.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000004",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:08.225Z",
+          "updated_at": "2021-12-02T06:43:08.497Z",
+          "version": 1,
+          "id": "TOP000034",
+          "name": "Cultural \u0026 Communication",
+          "description": "To what degree does the culture and communication modes balance openness, progress, integrity, accountability and risk management. Are there contra-indicators - e.g. unhealthy levels of risk aversion, culture of blame.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000004",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:08.239Z",
+          "updated_at": "2021-12-02T06:43:16.447Z",
+          "version": 1,
+          "id": "TOP000035",
+          "name": "Sovereignty",
+          "description": "Ownership and control over the products, business opportunities and data",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000004",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:08.252Z",
+          "updated_at": "2021-12-02T06:43:23.757Z",
+          "version": 1,
+          "id": "TOP000036",
+          "name": "Business agility",
+          "description": "Ability to implement or accept change (either tech or business/products), timeframe to implement change, tied to financial funding model.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000004",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:10.354Z",
+          "updated_at": "2021-12-02T06:51:38.417Z",
+          "version": 1,
+          "id": "TOP000054",
+          "name": "Business Environment",
+          "description": "The organization’s mission, objectives, stakeholders, and activities are understood and prioritized; this information is used to inform cybersecurity roles, responsibilities, and risk management decisions.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000004",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        }
+      ],
+      "createdBy": {
+        "email": "",
+        "system": ""
+      },
+      "updatedBy": {
+        "email": "",
+        "system": ""
+      }
+    },
+    {
+      "created_at": "2021-10-12T04:12:08.267Z",
+      "updated_at": "2021-10-12T04:12:08.267Z",
+      "version": 0,
+      "id": "ARE000005",
+      "name": "Data",
+      "description": "",
+      "domainId": "DOM000001",
+      "domain": {
+        "created_at": "2021-10-12T04:11:56.128Z",
+        "updated_at": "2021-10-12T04:11:56.16Z",
+        "version": 0,
+        "id": "DOM000001",
+        "name": "Application Review",
+        "description": "",
+        "areas": null,
+        "createdBy": {
+          "email": "",
+          "system": ""
+        },
+        "updatedBy": {
+          "email": "",
+          "system": ""
+        }
+      },
+      "topics": [
+        {
+          "created_at": "2021-10-12T04:12:08.285Z",
+          "updated_at": "2021-10-12T04:12:08.285Z",
+          "version": 0,
+          "id": "TOP000037",
+          "name": "Veracity",
+          "description": "",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000005",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:08.301Z",
+          "updated_at": "2021-10-12T04:12:08.301Z",
+          "version": 0,
+          "id": "TOP000038",
+          "name": "Store",
+          "description": "",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000005",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:08.315Z",
+          "updated_at": "2021-12-02T06:44:25.484Z",
+          "version": 1,
+          "id": "TOP000039",
+          "name": "Strategy",
+          "description": "The service\u0027s alignment to broader strategic goals with respect to data. That is - how the organisation plans to aggregate data from across business units, to support its broader initiatives.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000005",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:08.355Z",
+          "updated_at": "2021-12-02T06:44:32.042Z",
+          "version": 1,
+          "id": "TOP000040",
+          "name": "Metrics",
+          "description": "Tracking and metrics regarding data (volumes, categories, velocity, quality indicators)",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000005",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:08.369Z",
+          "updated_at": "2021-12-02T06:45:05.415Z",
+          "version": 1,
+          "id": "TOP000041",
+          "name": "Governance (Data)",
+          "description": "The service\u0027s adherence to policies on the firm\u0027s approach to data quality, ownership \u0026 accountability, dissemination \u0026 consumption, access control, security and storage.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000005",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:08.41Z",
+          "updated_at": "2021-10-12T04:12:08.41Z",
+          "version": 0,
+          "id": "TOP000042",
+          "name": "Organization and Roles",
+          "description": "",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000005",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:08.423Z",
+          "updated_at": "2021-10-12T04:12:08.423Z",
+          "version": 0,
+          "id": "TOP000043",
+          "name": "Life Cycle",
+          "description": "",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000005",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:08.438Z",
+          "updated_at": "2021-10-12T04:12:08.438Z",
+          "version": 0,
+          "id": "TOP000044",
+          "name": "Infrastructure",
+          "description": "",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000005",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:08.452Z",
+          "updated_at": "2021-12-02T07:03:45.653Z",
+          "version": 1,
+          "id": "TOP000045",
+          "name": "Privacy",
+          "description": "The set of concerns regarding the privacy required during the collection, aggregation and utilisation of data. This will include the use, disclosure, accuracy, security, categorisation and identity of data. The conformance to all legislation, policies, regulations and applicable codes of conduct.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000005",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:11.149Z",
+          "updated_at": "2021-10-12T04:12:11.149Z",
+          "version": 0,
+          "id": "TOP000058",
+          "name": "Data Security (PR.DS): ",
+          "description": "",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000005",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:11.164Z",
+          "updated_at": "2021-12-02T06:48:17.038Z",
+          "version": 1,
+          "id": "TOP000059",
+          "name": "Information Protection Processes and Procedures",
+          "description": "Security policies (that address purpose, scope, roles, responsibilities, management commitment, and coordination among organizational entities), processes, and procedures are maintained and used to manage protection of information systems and assets.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000005",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        }
+      ],
+      "createdBy": {
+        "email": "",
+        "system": ""
+      },
+      "updatedBy": {
+        "email": "",
+        "system": ""
+      }
+    },
+    {
+      "created_at": "2021-10-12T04:12:05.329Z",
+      "updated_at": "2021-10-12T04:12:05.329Z",
+      "version": 0,
+      "id": "ARE000003",
+      "name": "Governance",
+      "description": "",
+      "domainId": "DOM000001",
+      "domain": {
+        "created_at": "2021-10-12T04:11:56.128Z",
+        "updated_at": "2021-10-12T04:11:56.16Z",
+        "version": 0,
+        "id": "DOM000001",
+        "name": "Application Review",
+        "description": "",
+        "areas": null,
+        "createdBy": {
+          "email": "",
+          "system": ""
+        },
+        "updatedBy": {
+          "email": "",
+          "system": ""
+        }
+      },
+      "topics": [
+        {
+          "created_at": "2021-10-12T04:12:05.342Z",
+          "updated_at": "2021-12-02T06:40:25.43Z",
+          "version": 1,
+          "id": "TOP000024",
+          "name": "Vendor Agreements",
+          "description": "Contracts and agreements that govern how vendors and client operate with relation to the service or capability.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000003",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:06.149Z",
+          "updated_at": "2021-12-02T06:40:33.912Z",
+          "version": 1,
+          "id": "TOP000025",
+          "name": "Compliance \u0026 Legal",
+          "description": "Processes by which the service  ensures compliance, regulatory and legal requirements are embedded into its process.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000003",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:06.371Z",
+          "updated_at": "2021-12-02T06:40:39.247Z",
+          "version": 1,
+          "id": "TOP000026",
+          "name": "Portability",
+          "description": "The ability to move from one platform, technology, vendor or service provider to another. Where a capability is provided through more than one vendor this includes the relationships and dependencies in such agreements that are required to be met.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000003",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:06.44Z",
+          "updated_at": "2021-12-02T06:40:47.866Z",
+          "version": 1,
+          "id": "TOP000027",
+          "name": "Metrics",
+          "description": "Capability of the organisation to have behaviour and prioritisation driven by data and metrics.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000003",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:07.235Z",
+          "updated_at": "2021-12-02T07:03:45.697Z",
+          "version": 1,
+          "id": "TOP000028",
+          "name": "Industry Standards",
+          "description": "Ensuring the utilisation standards and best practices where these are applicable.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000003",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:07.327Z",
+          "updated_at": "2021-12-02T06:41:06.571Z",
+          "version": 1,
+          "id": "TOP000029",
+          "name": "SDLC Controls",
+          "description": "Standardised, defined and documented framework that all projects and programs across the bank use to effectively and efficiently deliver projects whilst controlling and minimising risk",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000003",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:10.435Z",
+          "updated_at": "2021-12-02T06:47:00.609Z",
+          "version": 1,
+          "id": "TOP000055",
+          "name": "Risk Assessment",
+          "description": "The organization understands the cybersecurity risk to organizational operations (including mission, functions, image, or reputation), organizational assets, and individuals.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000003",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:10.528Z",
+          "updated_at": "2021-12-02T06:47:06.463Z",
+          "version": 1,
+          "id": "TOP000056",
+          "name": "Risk Management Strategy",
+          "description": "The organization’s priorities, constraints, risk tolerances, and assumptions are established and used to support operational risk decisions.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000003",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        }
+      ],
+      "createdBy": {
+        "email": "",
+        "system": ""
+      },
+      "updatedBy": {
+        "email": "",
+        "system": ""
+      }
+    },
+    {
+      "created_at": "2021-10-12T04:12:03.446Z",
+      "updated_at": "2021-10-12T04:12:03.446Z",
+      "version": 0,
+      "id": "ARE000002",
+      "name": "Operations",
+      "description": "",
+      "domainId": "DOM000001",
+      "domain": {
+        "created_at": "2021-10-12T04:11:56.128Z",
+        "updated_at": "2021-10-12T04:11:56.16Z",
+        "version": 0,
+        "id": "DOM000001",
+        "name": "Application Review",
+        "description": "",
+        "areas": null,
+        "createdBy": {
+          "email": "",
+          "system": ""
+        },
+        "updatedBy": {
+          "email": "",
+          "system": ""
+        }
+      },
+      "topics": [
+        {
+          "created_at": "2021-10-12T04:12:03.459Z",
+          "updated_at": "2021-12-02T06:33:05.063Z",
+          "version": 1,
+          "id": "TOP000019",
+          "name": "Change Management",
+          "description": "The alignment to a defined organisational process that enables an application to transition from a current state to a desired state. The maturity of tooling used to actuate change of state with minimal risk.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000002",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:04.251Z",
+          "updated_at": "2021-12-02T06:33:24.567Z",
+          "version": 1,
+          "id": "TOP000020",
+          "name": "Incident Management",
+          "description": "The tooling and processes enabling an appropriate response to incidents and the alignment with broader incident management frameworks throughout the organisation.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000002",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:04.44Z",
+          "updated_at": "2021-12-02T06:33:44.552Z",
+          "version": 1,
+          "id": "TOP000021",
+          "name": "Service Management",
+          "description": "The list of all activities (including policies, processes and procedures) that are required to be performed in order to design,plan, deliver, operate, maintain and control any services delivered to the organisation or customers.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000002",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:04.453Z",
+          "updated_at": "2021-12-02T07:03:45.674Z",
+          "version": 1,
+          "id": "TOP000022",
+          "name": "Service Continuity",
+          "description": "The ability to restore services in the event of a disaster (e.g. loss of data centre) that destroys or interrupts service for some or all of the business\u0027s resources. A Business Continuity event, and the processes, procedures and specific actions taken in such event to ensure that service will be restored in a timely manner with no loss of data.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000002",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:05.288Z",
+          "updated_at": "2021-12-02T06:35:53.8Z",
+          "version": 1,
+          "id": "TOP000023",
+          "name": "Knowledge Management",
+          "description": "Capability  with respect to capture and dissemination of ops-relevant knowledge throughout the SDLC, quality of the service\u0027s documentation for its operators, captured learnings from incidents, and ongoing refinements.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000002",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:09.398Z",
+          "updated_at": "2021-10-12T04:12:09.398Z",
+          "version": 0,
+          "id": "TOP000048",
+          "name": "Deployment Management",
+          "description": "",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000002",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:09.493Z",
+          "updated_at": "2021-10-12T04:12:09.493Z",
+          "version": 0,
+          "id": "TOP000049",
+          "name": "Patch Management",
+          "description": "",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000002",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:10.254Z",
+          "updated_at": "2021-12-02T06:50:53.544Z",
+          "version": 1,
+          "id": "TOP000053",
+          "name": "Asset Management",
+          "description": "Asset Management (ID.AM): The data, personnel, devices, systems, and facilities that enable the organization to achieve business purposes are identified and managed consistent with their relative importance to organizational objectives and the organization’s risk strategy.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000002",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:11.359Z",
+          "updated_at": "2021-12-02T07:03:45.731Z",
+          "version": 1,
+          "id": "TOP000060",
+          "name": "Event Management",
+          "description": "Anomalous activity is detected and the potential impact of events is understood.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000002",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:11.441Z",
+          "updated_at": "2022-08-09T20:59:10.544Z",
+          "version": 2,
+          "id": "TOP000061",
+          "name": "Monitoring",
+          "description": "The process of measuring application performance, availability and user experience and using this data to identify and resolve application issues before they impact customers",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000002",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "stephen.newman@lab49.com",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:12.217Z",
+          "updated_at": "2021-10-12T04:12:12.217Z",
+          "version": 0,
+          "id": "TOP000062",
+          "name": "Configuration Management",
+          "description": "",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000002",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        }
+      ],
+      "createdBy": {
+        "email": "",
+        "system": ""
+      },
+      "updatedBy": {
+        "email": "",
+        "system": ""
+      }
+    },
+    {
+      "created_at": "2021-10-12T04:12:09.095Z",
+      "updated_at": "2021-10-12T04:12:09.095Z",
+      "version": 0,
+      "id": "ARE000006",
+      "name": "Security",
+      "description": "",
+      "domainId": "DOM000001",
+      "domain": {
+        "created_at": "2021-10-12T04:11:56.128Z",
+        "updated_at": "2021-10-12T04:11:56.16Z",
+        "version": 0,
+        "id": "DOM000001",
+        "name": "Application Review",
+        "description": "",
+        "areas": null,
+        "createdBy": {
+          "email": "",
+          "system": ""
+        },
+        "updatedBy": {
+          "email": "",
+          "system": ""
+        }
+      },
+      "topics": [
+        {
+          "created_at": "2021-10-12T04:12:09.108Z",
+          "updated_at": "2021-12-02T06:46:37.82Z",
+          "version": 1,
+          "id": "TOP000046",
+          "name": "Governance (Security)",
+          "description": "The policies, procedures, and processes to manage and monitor the organization’s regulatory, legal, risk, environmental, and operational requirements are understood and inform the",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000006",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:09.301Z",
+          "updated_at": "2021-10-12T04:12:09.301Z",
+          "version": 0,
+          "id": "TOP000047",
+          "name": "Build Process",
+          "description": "",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000006",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:09.534Z",
+          "updated_at": "2021-10-12T04:12:09.534Z",
+          "version": 0,
+          "id": "TOP000050",
+          "name": "Organisation",
+          "description": "",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000006",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:10.143Z",
+          "updated_at": "2021-10-12T04:12:10.143Z",
+          "version": 0,
+          "id": "TOP000051",
+          "name": "Design",
+          "description": "",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000006",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:10.183Z",
+          "updated_at": "2021-10-12T04:12:10.183Z",
+          "version": 0,
+          "id": "TOP000052",
+          "name": "Implementation",
+          "description": "",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000006",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        }
+      ],
+      "createdBy": {
+        "email": "",
+        "system": ""
+      },
+      "updatedBy": {
+        "email": "",
+        "system": ""
+      }
+    },
+    {
+      "created_at": "2021-10-12T04:11:56.206Z",
+      "updated_at": "2021-10-12T04:11:56.206Z",
+      "version": 0,
+      "id": "ARE000001",
+      "name": "Technology",
+      "description": "",
+      "domainId": "DOM000001",
+      "domain": {
+        "created_at": "2021-10-12T04:11:56.128Z",
+        "updated_at": "2021-10-12T04:11:56.16Z",
+        "version": 0,
+        "id": "DOM000001",
+        "name": "Application Review",
+        "description": "",
+        "areas": null,
+        "createdBy": {
+          "email": "",
+          "system": ""
+        },
+        "updatedBy": {
+          "email": "",
+          "system": ""
+        }
+      },
+      "topics": [
+        {
+          "created_at": "2021-10-12T04:11:56.245Z",
+          "updated_at": "2021-12-02T06:19:54.428Z",
+          "version": 1,
+          "id": "TOP000001",
+          "name": "Availability",
+          "description": "The expected reliability of a computer system including software, hardware and networks",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000001",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:11:57.096Z",
+          "updated_at": "2021-12-02T06:22:56.572Z",
+          "version": 1,
+          "id": "TOP000002",
+          "name": "Performance",
+          "description": "The degree to which a service aligns with mandated performance metrics, and the degree to which the performance and efficiency of the service is targeted, tracked and measured.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000001",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:11:57.34Z",
+          "updated_at": "2021-12-02T06:23:31.605Z",
+          "version": 1,
+          "id": "TOP000003",
+          "name": "Scalability",
+          "description": "The ability of a system to accommodate an increasing number of elements, process growing volumes of work gracefully and where capacity can be expanded.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000001",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:11:58.19Z",
+          "updated_at": "2021-12-02T06:23:54.804Z",
+          "version": 1,
+          "id": "TOP000004",
+          "name": "Maintainability",
+          "description": "The set of attributes that bear on the effort needed to make specified modifications to a system or service. The ease with which a system or component may be modified to correct faults, improve performance or adapt to a changed environment. The ease with which a system may be retained in, or restored to a state in which it performs its required functions.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000001",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:11:58.387Z",
+          "updated_at": "2021-12-02T06:24:20.217Z",
+          "version": 1,
+          "id": "TOP000005",
+          "name": "Manageability",
+          "description": "The ease of administration and configuration of a system. Including the processes to track and manage all individual configuration items. The sponsorship, knowledge of technology, support training and vendor management required for a system, service or component.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000001",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:11:59.07Z",
+          "updated_at": "2021-12-02T06:24:32.562Z",
+          "version": 1,
+          "id": "TOP000006",
+          "name": "Testability",
+          "description": "The degree to which a software system or a unit thereof supports its own testing, including the repeatability, automation and the accurate and timely reporting of the results.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000001",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:11:59.356Z",
+          "updated_at": "2021-12-02T06:24:52.383Z",
+          "version": 1,
+          "id": "TOP000007",
+          "name": "Security",
+          "description": "The set of cyber security strategies that prevents unauthorised access to organisational assets including systems, hardware, networks and data. Maintaining the integrity and confidentiality of sensitive information. Preventing unauthorised access.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000001",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:00.238Z",
+          "updated_at": "2021-12-02T06:25:03.861Z",
+          "version": 1,
+          "id": "TOP000008",
+          "name": "Usability",
+          "description": "The degree to which a system can be used by specified consumers to achieve quantified objectives with effectiveness, efficiency and satisfaction within a quantified context of use.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000001",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:00.267Z",
+          "updated_at": "2021-12-03T05:39:56.578Z",
+          "version": 2,
+          "id": "TOP000009",
+          "name": "Auditability",
+          "description": "The ability of a system to generate or obtain required artifacts to provide assurance that the system is safe, data integrity is maintained and the system is operating effectively. Compliance with all requirements including standards, policies, laws and service level agreements (SLA)",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000001",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:00.404Z",
+          "updated_at": "2021-12-02T06:25:43.265Z",
+          "version": 1,
+          "id": "TOP000010",
+          "name": "Organisational Architectural Alignment",
+          "description": "Alignment with the technology strategy, models and patterns as described within a reference architecture for the organisational capability.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000001",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:01.206Z",
+          "updated_at": "2021-12-02T06:25:57.632Z",
+          "version": 1,
+          "id": "TOP000011",
+          "name": "Infrastructure",
+          "description": "The infrastructure used to deliver the business capabilities required for the organisation. The operational processes related to ongoing  management and upkeep to ensure the provision of service.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000001",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:01.475Z",
+          "updated_at": "2021-12-02T06:26:12.234Z",
+          "version": 1,
+          "id": "TOP000012",
+          "name": "Cloud Readiness (Public/Hybrid)",
+          "description": "The assessment of all application and data required to deliver the capability and the ability to migrate these components to the cloud with minimal business disruption.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000001",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:02.172Z",
+          "updated_at": "2021-12-02T06:26:56.231Z",
+          "version": 1,
+          "id": "TOP000013",
+          "name": "Functional Alignment",
+          "description": "Aligned to Business capability and a broader alignment to support organisational direction; the level of functional fit against the requirements of the organisation.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000001",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:02.215Z",
+          "updated_at": "2021-12-02T06:27:18.088Z",
+          "version": 1,
+          "id": "TOP000014",
+          "name": "Integration complexity",
+          "description": "The overall complexity of the system architecture required to deliver the organisational capability; this may require a system of systems with an overarching component model and context. Intergrational complexity includes the number of nodes, the connections between these nodes and the definition of the interfaces between the various components.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000001",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:02.326Z",
+          "updated_at": "2021-12-02T06:27:35.158Z",
+          "version": 1,
+          "id": "TOP000015",
+          "name": "SDLC Process",
+          "description": "The process used by the organisation to deliver software, including the design, development, testing and packaging of the overall solution to deliver software in a repeatable, methodical way to ensure completion within time and cost estimates.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000001",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:03.088Z",
+          "updated_at": "2021-12-02T06:28:21.787Z",
+          "version": 1,
+          "id": "TOP000016",
+          "name": "Technical Debt",
+          "description": "The implied additional cost or risk that is incurred by a business for implementation of solutions that do not align to the defined strategy of the organisation.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000001",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:03.237Z",
+          "updated_at": "2021-12-02T06:31:20.07Z",
+          "version": 1,
+          "id": "TOP000017",
+          "name": "Goals",
+          "description": "Does the technology align to broader departmental goals (e.g. Simplification, Re-use) demonstrating value contributions to these larger goals and business value drivers.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000001",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:03.278Z",
+          "updated_at": "2021-12-02T06:31:45.677Z",
+          "version": 1,
+          "id": "TOP000018",
+          "name": "External Architectural Alignment",
+          "description": "Alignment with vendor and/or industry body technology strategies and standards.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000001",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        },
+        {
+          "created_at": "2021-10-12T04:12:11.136Z",
+          "updated_at": "2021-12-02T06:47:37.643Z",
+          "version": 1,
+          "id": "TOP000057",
+          "name": "Identity Management, Authentication and Access Control",
+          "description": "Access to physical and logical assets and associated facilities is limited to authorized users, processes, and devices, and is managed consistent with the assessed risk of unauthorized access to authorized activities and transactions.",
+          "domainId": "DOM000001",
+          "domain": null,
+          "areaId": "ARE000001",
+          "area": null,
+          "criterias": null,
+          "questions": null,
+          "createdBy": {
+            "email": "",
+            "system": ""
+          },
+          "updatedBy": {
+            "email": "",
+            "system": ""
+          }
+        }
+      ],
+      "createdBy": {
+        "email": "",
+        "system": ""
+      },
+      "updatedBy": {
+        "email": "",
+        "system": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,233 @@
+﻿{
+    "results":  [
+                    {
+                        "created_at":  "2022-02-18T06:46:20.65Z",
+                        "updated_at":  "2022-02-18T06:46:31.469Z",
+                        "version":  1,
+                        "createdBy":  {
+                                          "email":  "michael.khan@lab49.com",
+                                          "system":  ""
+                                      },
+                        "updatedBy":  {
+                                          "email":  "michael.khan@lab49.com",
+                                          "system":  ""
+                                      },
+                        "id":  "RTP000003",
+                        "name":  "Accurate Report Template",
+                        "description":  "Accurate Report Template",
+                        "domainId":  "DOM000001",
+                        "domain":  {
+                                       "created_at":  "2021-10-12T04:11:56.128Z",
+                                       "updated_at":  "2021-10-12T04:11:56.16Z",
+                                       "version":  0,
+                                       "id":  "DOM000001",
+                                       "name":  "Application Review",
+                                       "description":  "",
+                                       "areas":  null,
+                                       "createdBy":  {
+                                                         "email":  "",
+                                                         "system":  ""
+                                                     },
+                                       "updatedBy":  {
+                                                         "email":  "",
+                                                         "system":  ""
+                                                     }
+                                   },
+                        "sections":  [
+                                         {
+                                             "id":  "title",
+                                             "title":  "\u003ch1 class=\"display-3 mb-4\"\u003eLab49 Health Assessment \u003cbr/\u003e\n\t\t\t\t\t\t\u003cspan class=\"text-muted display-6\"\u003e{{.Project.Name}}\u003c/span\u003e\n\t\t\t\t\t  \u003ch1\u003e",
+                                             "content":  "Produced by Lab49 on {{.Now.Format \"2006 January 06\"}}, \u003chr size=\"5\" class=\"bg-lab opacity-10\"\u003e"
+                                         },
+                                         {
+                                             "id":  "introduction",
+                                             "title":  "\u003ch1 class=\"display-3 mb-4\"\u003eIntroduction\u003c/h1\u003e",
+                                             "content":  "{{.Project.Client.Name}}’s {{.Project.Name}} has been identified as a critical Group application. Recent P2 incidents have and continue to occur directly impacting the availability of banking services reliant on channels which make use of the EP system for orchestration; workflow; and integration of services.\n  \nThe focus of this report is the {{.Project.Client.Name}}. This platform performs the following main roles :\n* ***Role 1***\n* ***Role 2***\n* ***Role 3***\n\nThe engagement was conducted over a six-week period by Lab49.  The assessment team engaged directly with the various teams within CBA to understand the current technology platform landscape and validate findings against a bespoke Health Assessment Framework to determine CBA’s maturity with respect to the avoidance of P1 and P2 incidents as the Enterprise platform approaches its end of life in **September 2022**.\n\t\t\t\t"
+                                         },
+                                         {
+                                             "id":  "scope",
+                                             "title":  "\u003ch2 class=\"display-5\"\u003eScope\u003c/h2\u003e",
+                                             "content":  "The scope of the review covers the maturity and health of the {{.Project.Name}} platform. *The review puts specific focus on stability, reliability and recovery from incidents or issues and the overall portability of the platform beyond the end of life. Special consideration is given to consumers of the platform and their resulting experience. The findings provide an actionable path to improvement*"
+                                         },
+                                         {
+                                             "id":  "methodology",
+                                             "title":  "\u003ch2 class=\"display-5\"\u003eMethodology\u003c/h2\u003e",
+                                             "content":  "Lab49’s Health Assessment Framework is derived from deep exposure to many of the industry’s largest technology platforms; it provides a standardised approach that can be deployed widely across CBA systems to deliver consistent and comparable results. To derive meaningful results across a variety of platforms, the optimised framework primarily takes a 360-degree view of platform maturity including technology, people, process, and data.\n\nThe purpose of this review is to assess the {{.Project.Name}} maturity, stability, integrity and performance throughout the run-to-retire phase as data is possibly migrated onto new platforms.  The findings from this exercise should be read not only as an assessment of the current state of the system but also provide an actionable path to improvement. Furthermore, it should be noted that to achieve higher levels of maturity ({{.Project.Score.Global}} and up) requires coordinated, cross-organisational effort.\n\nThe assessment framework is based upon a scoring measure across a 5-point scale as an objective indicator to assess system maturity and complexity. The Framework is based upon the following maturity levels:\n\n\u003ctable class=\"table table-striped\"\u003e\n  \u003cthead\u003e\n\t\u003ctr\u003e\n      \u003ctd\u003eLevel\u003c/td\u003e\n      \u003ctd\u003eTitle\u003c/td\u003e\n      \u003ctd\u003eDescription\u003c/td\u003e\n    \u003c/tr\u003e\n    \u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\n        \u003ctd\u003e1\u003c/td\u003e\n        \u003ctd\u003eInitial\u003c/td\u003e\n        \u003ctd\u003eSuccess depends on the competence and efforts of key individuals.\u003c/td\u003e\n      \u003c/tr\u003e\n      \u003ctr\u003e\n        \u003ctd\u003e2\u003c/td\u003e\n        \u003ctd\u003eDeveloping\u003c/td\u003e\n        \u003ctd\u003eTeam-wide process discipline is in place. Processes are repeatable within the context of a team.\u003c/td\u003e\n      \u003c/tr\u003e\n      \u003ctr\u003e\n        \u003ctd\u003e3\u003c/td\u003e\n        \u003ctd\u003eDefined\u003c/td\u003e\n        \u003ctd\u003eStandards are set and used across multiple teams. Organisation-wide initiatives provide meaningful uplift to teams.\u003c/td\u003e\n      \u003c/tr\u003e\n      \u003ctr\u003e\n        \u003ctd\u003e4\u003c/td\u003e\n        \u003ctd\u003eMeasurable\u003c/td\u003e\n        \u003ctd\u003eCritical aspects of processes emanate metrics and data with high levels of automation. Processes are quantified and controlled.\u003c/td\u003e\n      \u003c/tr\u003e\n      \u003ctr\u003e\n        \u003ctd\u003e5\u003c/td\u003e\n        \u003ctd\u003eOptimising\u003c/td\u003e\n        \u003ctd\u003eProcess improvement goals are quantified and measured for continuous improvement.\u003c/td\u003e\n      \u003c/tr\u003e\n    \u003c/tbody\u003e\n\u003c/table\u003e\n\nFor this review, the following {{.Project.Topics | len}} topics have been identified as key measures for assessing system health:\n\n\u003col\u003e\t\n{{range .Project.Topics}}\n\u003cli\u003e{{.Name}}\u003c/li\u003e\n{{end}}\n\u003c/ol\u003e\n\nWithin each of these {{.Project.Topics | len}} topics is a detailed set of measures which have been assessed against the 5-point maturity scale. The assessment of each topic has resulted in an aggregated maturity level for that topic, providing an objective summary view of the overall system maturity.\n\n\n"
+                                         },
+                                         {
+                                             "id":  "assessmentSummary",
+                                             "title":  "\u003ch1 class=\"display-3 mb-4\"\u003eAssessment Summary\u003c/h1\u003e",
+                                             "content":  ""
+                                         },
+                                         {
+                                             "id":  "assessmentScore",
+                                             "title":  "\u003ch2 class=\"display-5\"\u003eAssessment Breakdown\u003c/h2\u003e",
+                                             "content":  "\nThe breakdown of the {{.Project.Name}} health assessment rating is detailed in the below table and chart.\n\n\u003cspan class=\"text-primary\"\u003e[INSERT SCORE CHART HERE]\u003c/span\u003e\n\n\u003ctable class=\"table table-striped\"\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eTopic\u003c/th\u003e\n\u003cth\u003eScore\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n{{range .Project.Topics}}\n\u003ctr\u003e\n\u003ctd\u003e{{.Name}}\u003c/td\u003e\n\u003ctd\u003e{{index $.Project.Score.Topics .Id}}\u003c/td\u003e\n\u003c/tr\u003e\n{{end}}\n\u003c/tbody\u003e\n\u003c/table\u003e\n"
+                                         },
+                                         {
+                                             "id":  "summaryOfRecommendations",
+                                             "title":  "\u003ch2 class=\"display-5\"\u003eSummary of Recommendations\u003c/h2\u003e",
+                                             "content":  "\nThe recommendations listing by topic covered in this report are listed below:\n\n\u003ctable class=\"table\"\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eTopic\u003c/th\u003e\n\u003cth\u003eRecommendation\u003c/th\u003e\n\u003cth\u003ePriority\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n{{range $topicId,$topicRecommendations := .RecommendationsByTopic -}}\n\u003ctr class=\"bg-light\"\u003e\u003cth colspan=\"3\"\u003e{{($.Project.GetTopic $topicId).Name}}\u003c/th\u003e\u003c/tr\u003e\n\t{{range $topicRecommendations -}}\n\u003ctr\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003ctd\u003e{{.Title}}\u003c/td\u003e\n\u003ctd class=\"{{if eq .Priority 1}}bg-success{{else if eq .Priority 2}}bg-warning{{else if eq .Priority 3}}bg-danger text-light{{end}}\"\u003e{{.Priority | priority}}\u003c/td\u003e\n\u003c/tr\u003e\n\t\n\t{{- end}}\n{{- end}}\n\u003c/tbody\u003e\n\u003c/table\u003e\n\n"
+                                         },
+                                         {
+                                             "id":  "assessmentRecommendations",
+                                             "title":  "\u003ch1 class=\"display-3 mb-4\"\u003eAssessment Topics\u003c/h1\u003e",
+                                             "content":  "\n{{range $topicId,$topicRecommendations := .RecommendationsByTopic}}\n\t\t\n\u003ch2 class=\"display-5\"\u003e{{($.Project.GetTopic $topicId).Name}}\u003c/h2\u003e\n\n{{range $topicRecommendations}}\n\u003cdiv class=\"mb-4\"\u003e\n\u003ch4 class=\"text-danger\"\u003e{{.Title}}\u003c/h4\u003e\n\n##### Observation\n{{.Observation}}\n\n##### Risk\n{{.Risk}}\n\n##### Recommendation\n{{.Recommendation}}\n\u003c/div\u003e\n{{end}}\n\n\n\n{{end}}\n"
+                                         },
+                                         {
+                                             "id":  "appendix",
+                                             "title":  "\u003ch1 class=\"display-3 mb-4\"\u003eAppendix\u003c/h1\u003e",
+                                             "content":  ""
+                                         },
+                                         {
+                                             "id":  "currentState",
+                                             "title":  "\u003ch2 class=\"display-5\"\u003eCurrent State\u003c/h2\u003e",
+                                             "content":  ""
+                                         },
+                                         {
+                                             "id":  "ongoingWork",
+                                             "title":  "\u003ch2 class=\"display-5\"\u003eOngoing Work\u003c/h2\u003e",
+                                             "content":  ""
+                                         },
+                                         {
+                                             "id":  "scoringMethod",
+                                             "title":  "\u003ch2 class=\"display-5\"\u003eScoring Method\u003c/h2\u003e",
+                                             "content":  "There are 2 types of scores that the assessment produces:\n\n1.\tTopic score: this is a score per topic area. Its intent is to communicate relative strength and focus areas across several topics.\n2.\tOverall score: this is a score for the overall assessment. Its intent is to provide upper-level management a general sense of how the service is performing.\n\nThe method used to devise each of the above scores is detailed in the following sub-sections.\n\n\u003ch3 class=\"display-6\"\u003eTopic Score\u003c/h3\u003e\n\u003cp\u003eThe topic score focusses on providing a relative health measure for each topic area, such as Availability and Performance.  It is expressed as a number between 0 and 5.\u003c/p\u003e\n\n\u003ch4\u003eMethod overview\u003c/h4\u003e\n\u003cp\u003e\nFor each topic, there are several criteria. Each criterion is associated with a maturity level (0 through to 5). Some example criteria are in the following Worked Example sub-section. \n\nWhen performing an assessment on a topic, each criterion is given a rating. Each rating, along with its associated score value is listed below:\n\n*\tNot met (0)\n*\tPartially met (0.5)\n*\tMet or Exceeded (1)\n\nThis provides us with the following interim values for the topic:\n\n*\tA max maturity for the assessment: this is one level below the maturity of the first occurrence of a “Not Met” criteria.  This is based upon the rationale that a topic’s current maturity should always fall short of the first observed unmet criteria.\n*\tA base score : this is calculated by summing rating scores of the criterias up to the max maturity\n*\tThe base number of criteria : number of criterias forming the base raw score\n*\tAn extended score : this is calculated by summing rating scores of the criterias above max maturity\n*\tThe extended number of criteria : number of criterias forming the extended raw score\n\nThe final score for this topic is then calculated as follows:\n(base score / base number of criteria * max maturity) + (extended score/extended number of criterias)\nThe final score is then rounded to 1 decimal point.\n\nThe following sub-section walks through a worked example.\nWorked Example\nBelow is a slimmed down version of the criteria for Availability topic for example purposes. It also contains a rating per topic for an example assessment:\n\u003c/p\u003e\n\n\u003ctable class=\"table table-striped\"\u003e\n\t\u003cthead\u003e\n\t\t\u003ctr\u003e\u003cth\u003eMaturity Level\u003c/th\u003e\u003cth\u003eCriteria\u003c/th\u003e\u003cth\u003eRating\u003c/th\u003e\u003c/tr\u003e\n\t\u003c/thead\u003e\n\t\u003ctbody\u003e\n\t\t\u003ctr\u003e\u003ctd\u003e1\u003c/td\u003e\u003ctd\u003eRoles are assigned in ad-hoc manner.\u003c/td\u003e\u003ctd\u003eMet or exceeded (1)\u003c/td\u003e\u003c/tr\u003e\n\t\t\u003ctr\u003e\u003ctd\u003e1\u003c/td\u003e\u003ctd\u003eAvailability requirements are collected in ad-hoc manner and are not quantified.\u003c/td\u003e\u003ctd\u003eMet or exceeded (1)\u003c/td\u003e\u003c/tr\u003e\n\t\t\u003ctr\u003e\u003ctd\u003e2\u003c/td\u003e\u003ctd\u003eInitial attempts to assign roles across development team, solution architecture and architecture review board. Basic consistency on across projects exists.\u003c/td\u003e\u003ctd\u003eMet or exceeded (1)\u003c/td\u003e\u003c/tr\u003e\n\t\t\u003ctr\u003e\u003ctd\u003e2\u003c/td\u003e\u003ctd\u003eOperational standards are being established with respect to availability, including documentation and training, to support high availability at network, host, and application levels.\u003c/td\u003e\u003ctd\u003eMet or exceeded (1)\u003c/td\u003e\u003c/tr\u003e\n\t\t\u003ctr\u003e\u003ctd\u003e3\u003c/td\u003e\u003ctd\u003eGroup-wide roles across development team, solution architecture, architecture review board are defined and followed.\u003c/td\u003e\u003ctd\u003ePartially met (0.5)\u003c/td\u003e\u003c/tr\u003e\n\t\t\u003ctr\u003e\u003ctd\u003e3\u003c/td\u003e\u003ctd\u003eGroup-wide requirements process for availability is established and followed. It includes specification of quantifiable availability goals by business stakeholders. SLAs and SLOs are established.\u003c/td\u003e\u003ctd\u003ePartially met (0.5)\u003c/td\u003e\u003c/tr\u003e\n\t\t\u003ctr\u003e\u003ctd\u003e4\u003c/td\u003e\u003ctd\u003eAvailability metrics such as Mean Time to Failure (MTTF) and Mean Time to Recovery (MTTR) are collected consistently. Metrics along the path between systems are collected consistently.\u003c/td\u003e\u003ctd\u003eNot met (0)\u003c/td\u003e\u003c/tr\u003e\n\t\t\u003ctr\u003e\u003ctd\u003e5\u003c/td\u003e\u003ctd\u003eAvailability metrics are fed back into the SDLC or vendor processes to improve availability.\u003c/td\u003e\u003ctd\u003e\tPartially met (0.5)\u003c/td\u003e\u003c/tr\u003e\n\t\u003c/tbody\u003e\n\u003c/table\u003e\n\nIn this example, the interim values are:\n\n*\tMax maturity: 3 (the first criteria with “Not met” is a Level 4 criteria, therefore max maturity becomes 3).\n*\tBase score: 5\n*\tBase number of criteria : 6\n*\tExtended score : 0.5\n*\tExtended number of criteria: 2\n\n\nTherefore, the final topic score, in this example, works out to be:\n      \n    (5 / 6) * 3 + (0.5/2) = 2.75\n\n\n\u003ch3 class=\"display-6\"\u003eOverall Score\u003c/h3\u003e\n\u003cp\u003e\nThe overall score is a simple average over the score of each topic. Supposing a given assessment yields the following topic scores:\n\n\u003ctable class=\"table table-striped\"\u003e\n\t\u003cthead\u003e\n\t\t\u003ctr\u003e\u003cth\u003eTopic\u003c/th\u003e\u003cth\u003eMaturity Level\u003c/th\u003e\u003c/tr\u003e\n\t\u003c/thead\u003e\n\t\u003ctbody\u003e\n\t\t\u003ctr\u003e\u003ctd\u003eAvailability Developing\u003c/td\u003e\u003ctd\u003e(2.7)\u003c/td\u003e\u003c/tr\u003e\n\t\t\u003ctr\u003e\u003ctd\u003ePerformance\tDeveloping\u003c/td\u003e\u003ctd\u003e(2.6)\u003c/td\u003e\u003c/tr\u003e\n\t\t\u003ctr\u003e\u003ctd\u003eScalability\tDeveloping\u003c/td\u003e\u003ctd\u003e(2)\u003c/td\u003e\u003c/tr\u003e\n\t\t\u003ctr\u003e\u003ctd\u003eMaintainability\tDeveloping\u003c/td\u003e\u003ctd\u003e(3.3)\u003c/td\u003e\u003c/tr\u003e\n\t\t\u003ctr\u003e\u003ctd\u003eSecurity Defined\u003c/td\u003e\u003ctd\u003e(3.7)\u003c/td\u003e\u003c/tr\u003e\n\t\t\u003ctr\u003e\u003ctd\u003eOrganisational Architectural Alignment\tDeveloping\u003c/td\u003e\u003ctd\u003e(1.9)\u003c/td\u003e\u003c/tr\u003e\n\t\t\u003ctr\u003e\u003ctd\u003eSDLC Process Initial\u003c/td\u003e\u003ctd\u003e(2.6)\u003c/td\u003e\u003c/tr\u003e\n\t\t\u003ctr\u003e\u003ctd\u003eChange Management Defined\u003c/td\u003e\u003ctd\u003e(2.8)\u003c/td\u003e\u003c/tr\u003e\n\t\t\u003ctr\u003e\u003ctd\u003eIncident Management\tDefined\u003c/td\u003e\u003ctd\u003e(2) \u003c/td\u003e\u003c/tr\u003e\n\t\t\u003ctr\u003e\u003ctd\u003eDisaster Recovery Defined\u003c/td\u003e\u003ctd\u003e(3.4)\u003c/td\u003e\u003c/tr\u003e\n\t\u003c/tbody\u003e\n\u003c/table\u003e\n\n\nFor such an assessment, the overall score becomes 2.7.\n\n\u003c/p\u003e\n"
+                                         }
+                                     ]
+                    },
+                    {
+                        "created_at":  "2022-01-10T23:44:55.254Z",
+                        "updated_at":  "2022-02-18T06:45:10.274Z",
+                        "version":  3,
+                        "createdBy":  {
+                                          "email":  "",
+                                          "system":  "ASSESSMENT_CONFIGURATION_SYSTEM"
+                                      },
+                        "updatedBy":  {
+                                          "email":  "michael.khan@lab49.com",
+                                          "system":  ""
+                                      },
+                        "id":  "RTP000001",
+                        "name":  "Report Template 1",
+                        "description":  "",
+                        "domainId":  "DOM000001",
+                        "domain":  {
+                                       "created_at":  "2021-10-12T04:11:56.128Z",
+                                       "updated_at":  "2021-10-12T04:11:56.16Z",
+                                       "version":  0,
+                                       "id":  "DOM000001",
+                                       "name":  "Application Review",
+                                       "description":  "",
+                                       "areas":  null,
+                                       "createdBy":  {
+                                                         "email":  "",
+                                                         "system":  ""
+                                                     },
+                                       "updatedBy":  {
+                                                         "email":  "",
+                                                         "system":  ""
+                                                     }
+                                   },
+                        "sections":  [
+                                         {
+                                             "id":  "title",
+                                             "title":  "\u003ch1 class=\"display-3 mb-4\"\u003eLab49 Health Assessment \u003cbr/\u003e\n\t\t\t\t\t\t\u003cspan class=\"text-muted display-6\"\u003e{{.Project.Name}}\u003c/span\u003e\n\t\t\t\t\t  \u003ch1\u003e",
+                                             "content":  "Produced by Lab49 on {{.Now.Format \"2006 January 06\"}}, \u003chr size=\"5\" class=\"bg-lab opacity-10\"\u003e"
+                                         },
+                                         {
+                                             "id":  "introduction",
+                                             "title":  "\u003ch1 class=\"display-3 mb-4\"\u003eIntroduction\u003c/h1\u003e",
+                                             "content":  "{{.Project.Client.Name}}’s {{.Project.Name}} has been identified as a critical Group application. Recent P2 incidents have and continue to occur directly impacting the availability of banking services reliant on channels which make use of the EP system for orchestration; workflow; and integration of services.\n  \nThe focus of this report is the {{.Project.Client.Name}}. This platform performs the following main roles :\n* ***Role 1***\n* ***Role 2***\n* ***Role 3***\n\nThe engagement was conducted over a six-week period by Lab49.  The assessment team engaged directly with the various teams within CBA to understand the current technology platform landscape and validate findings against a bespoke Health Assessment Framework to determine CBA’s maturity with respect to the avoidance of P1 and P2 incidents as the Enterprise platform approaches its end of life in **September 2022**.\n\t\t\t\t"
+                                         },
+                                         {
+                                             "id":  "scope",
+                                             "title":  "\u003ch2 class=\"display-5\"\u003eScope\u003c/h2\u003e",
+                                             "content":  "The scope of the review covers the maturity and health of the {{.Project.Name}} platform. *The review puts specific focus on stability, reliability and recovery from incidents or issues and the overall portability of the platform beyond the end of life. Special consideration is given to consumers of the platform and their resulting experience. The findings provide an actionable path to improvement*"
+                                         },
+                                         {
+                                             "id":  "methodology",
+                                             "title":  "\u003ch2 class=\"display-5\"\u003eMethodology\u003c/h2\u003e",
+                                             "content":  "Lab49’s Health Assessment Framework is derived from deep exposure to many of the industry’s largest technology platforms; it provides a standardised approach that can be deployed widely across CBA systems to deliver consistent and comparable results. To derive meaningful results across a variety of platforms, the optimised framework primarily takes a 360-degree view of platform maturity including technology, people, process, and data.\n\nThe purpose of this review is to assess the {{.Project.Name}} maturity, stability, integrity and performance throughout the run-to-retire phase as data is possibly migrated onto new platforms.  The findings from this exercise should be read not only as an assessment of the current state of the system but also provide an actionable path to improvement. Furthermore, it should be noted that to achieve higher levels of maturity ({{.Project.Score.Global}} and up) requires coordinated, cross-organisational effort.\n\nThe assessment framework is based upon a scoring measure across a 5-point scale as an objective indicator to assess system maturity and complexity. The Framework is based upon the following maturity levels:\n\n\u003ctable class=\"table table-striped\"\u003e\n  \u003cthead\u003e\n\t\u003ctr\u003e\n      \u003ctd\u003eLevel\u003c/td\u003e\n      \u003ctd\u003eTitle\u003c/td\u003e\n      \u003ctd\u003eDescription\u003c/td\u003e\n    \u003c/tr\u003e\n    \u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\n        \u003ctd\u003e1\u003c/td\u003e\n        \u003ctd\u003eInitial\u003c/td\u003e\n        \u003ctd\u003eSuccess depends on the competence and efforts of key individuals.\u003c/td\u003e\n      \u003c/tr\u003e\n      \u003ctr\u003e\n        \u003ctd\u003e2\u003c/td\u003e\n        \u003ctd\u003eDeveloping\u003c/td\u003e\n        \u003ctd\u003eTeam-wide process discipline is in place. Processes are repeatable within the context of a team.\u003c/td\u003e\n      \u003c/tr\u003e\n      \u003ctr\u003e\n        \u003ctd\u003e3\u003c/td\u003e\n        \u003ctd\u003eDefined\u003c/td\u003e\n        \u003ctd\u003eStandards are set and used across multiple teams. Organisation-wide initiatives provide meaningful uplift to teams.\u003c/td\u003e\n      \u003c/tr\u003e\n      \u003ctr\u003e\n        \u003ctd\u003e4\u003c/td\u003e\n        \u003ctd\u003eMeasurable\u003c/td\u003e\n        \u003ctd\u003eCritical aspects of processes emanate metrics and data with high levels of automation. Processes are quantified and controlled.\u003c/td\u003e\n      \u003c/tr\u003e\n      \u003ctr\u003e\n        \u003ctd\u003e5\u003c/td\u003e\n        \u003ctd\u003eOptimising\u003c/td\u003e\n        \u003ctd\u003eProcess improvement goals are quantified and measured for continuous improvement.\u003c/td\u003e\n      \u003c/tr\u003e\n    \u003c/tbody\u003e\n\u003c/table\u003e\n\nFor this review, the following {{.Project.Topics | len}} topics have been identified as key measures for assessing system health:\n\n\u003col\u003e\t\n{{range .Project.Topics}}\n\u003cli\u003e{{.Name}}\u003c/li\u003e\n{{end}}\n\u003c/ol\u003e\n\nWithin each of these {{.Project.Topics | len}} topics is a detailed set of measures which have been assessed against the 5-point maturity scale. The assessment of each topic has resulted in an aggregated maturity level for that topic, providing an objective summary view of the overall system maturity.\n\n\n"
+                                         },
+                                         {
+                                             "id":  "assessmentSummary",
+                                             "title":  "\u003ch1 class=\"display-3 mb-4\"\u003eAssessment Summary\u003c/h1\u003e",
+                                             "content":  ""
+                                         },
+                                         {
+                                             "id":  "assessmentScore",
+                                             "title":  "\u003ch2 class=\"display-5\"\u003eAssessment Breakdown\u003c/h2\u003e",
+                                             "content":  "\nThe breakdown of the {{.Project.Name}} health assessment rating is detailed in the below table and chart.\n\n\u003cspan class=\"text-primary\"\u003e[INSERT SCORE CHART HERE]\u003c/span\u003e\n\n\u003ctable class=\"table table-striped\"\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eTopic\u003c/th\u003e\n\u003cth\u003eScore\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n{{range .Project.Topics}}\n\u003ctr\u003e\n\u003ctd\u003e{{.Name}}\u003c/td\u003e\n\u003ctd\u003e{{index $.Project.Score.Topics .Id}}\u003c/td\u003e\n\u003c/tr\u003e\n{{end}}\n\u003c/tbody\u003e\n\u003c/table\u003e\n"
+                                         },
+                                         {
+                                             "id":  "summaryOfRecommendations",
+                                             "title":  "\u003ch2 class=\"display-5\"\u003eSummary of Recommendations\u003c/h2\u003e",
+                                             "content":  "\nThe recommendations listing by topic covered in this report are listed below:\n\n\u003ctable class=\"table\"\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003eTopic\u003c/th\u003e\n\u003cth\u003eRecommendation\u003c/th\u003e\n\u003cth\u003ePriority\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n{{range $topicId,$topicRecommendations := .RecommendationsByTopic -}}\n\u003ctr class=\"bg-light\"\u003e\u003cth colspan=\"3\"\u003e{{($.Project.GetTopic $topicId).Name}}\u003c/th\u003e\u003c/tr\u003e\n\t{{range $topicRecommendations -}}\n\u003ctr\u003e\n\u003ctd\u003e\u003c/td\u003e\n\u003ctd\u003e{{.Title}}\u003c/td\u003e\n\u003ctd class=\"{{if eq .Priority 1}}bg-success{{else if eq .Priority 2}}bg-warning{{else if eq .Priority 3}}bg-danger text-light{{end}}\"\u003e{{.Priority | priority}}\u003c/td\u003e\n\u003c/tr\u003e\n\t\n\t{{- end}}\n{{- end}}\n\u003c/tbody\u003e\n\u003c/table\u003e\n\n"
+                                         },
+                                         {
+                                             "id":  "assessmentRecommendations",
+                                             "title":  "\u003ch1 class=\"display-3 mb-4\"\u003eAssessment Topics\u003c/h1\u003e",
+                                             "content":  "\n{{range $topicId,$topicRecommendations := .RecommendationsByTopic}}\n\t\t\n\u003ch2 class=\"display-5\"\u003e{{($.Project.GetTopic $topicId).Name}}\u003c/h2\u003e\n\n{{range $topicRecommendations}}\n\u003cdiv class=\"mb-4\"\u003e\n\u003ch4 class=\"text-danger\"\u003e{{.Title}}\u003c/h4\u003e\n\n##### Observation\n{{.Observation}}\n\n##### Risk\n{{.Risk}}\n\n##### Recommendation\n{{.Recommendation}}\n\u003c/div\u003e\n{{end}}\n\n\n\n{{end}}\n"
+                                         },
+                                         {
+                                             "id":  "appendix",
+                                             "title":  "\u003ch1 class=\"display-3 mb-4\"\u003eAppendix\u003c/h1\u003e",
+                                             "content":  ""
+                                         },
+                                         {
+                                             "id":  "currentState",
+                                             "title":  "\u003ch2 class=\"display-5\"\u003eCurrent State\u003c/h2\u003e",
+                                             "content":  ""
+                                         },
+                                         {
+                                             "id":  "ongoingWork",
+                                             "title":  "\u003ch2 class=\"display-5\"\u003eOngoing Work\u003c/h2\u003e",
+                                             "content":  ""
+                                         },
+                                         {
+                                             "id":  "scoringMethod",
+                                             "title":  "\u003ch2 class=\"display-5\"\u003eScoring Method\u003c/h2\u003e",
+                                             "content":  "There are 2 types of scores that the assessment produces:\n\n1.\tTopic score: this is a score per topic area. Its intent is to communicate relative strength and focus areas across several topics.\n2.\tOverall score: this is a score for the overall assessment. Its intent is to provide upper-level management a general sense of how the service is performing.\n\nThe method used to devise each of the above scores is detailed in the following sub-sections.\n\n\u003ch3 class=\"display-6\"\u003eTopic Score\u003c/h3\u003e\n\u003cp\u003eThe topic score focusses on providing a relative health measure for each topic area, such as Availability and Performance.  It is expressed as a number between 0 and 5.\u003c/p\u003e\n\n\u003ch4\u003eMethod overview\u003c/h4\u003e\n\u003cp\u003e\nFor each topic, there are several criteria. Each criterion is associated with a maturity level (0 through to 5). Some example criteria are in the following Worked Example sub-section. \n\nWhen performing an assessment on a topic, each criterion is given a rating. Each rating, along with its associated score value is listed below:\n\n*\tNot met (0)\n*\tPartially met (0.5)\n*\tMet or Exceeded (1)\n\nThis provides us with the following interim values for the topic:\n\n*\tA max maturity for the assessment: this is one level below the maturity of the first occurrence of a “Not Met” criteria.  This is based upon the rationale that a topic’s current maturity should always fall short of the first observed unmet criteria.\n*\tA base score : this is calculated by summing rating scores of the criterias up to the max maturity\n*\tThe base number of criteria : number of criterias forming the base raw score\n*\tAn extended score : this is calculated by summing rating scores of the criterias above max maturity\n*\tThe extended number of criteria : number of criterias forming the extended raw score\n\nThe final score for this topic is then calculated as follows:\n(base score / base number of criteria * max maturity) + (extended score/extended number of criterias)\nThe final score is then rounded to 1 decimal point.\n\nThe following sub-section walks through a worked example.\nWorked Example\nBelow is a slimmed down version of the criteria for Availability topic for example purposes. It also contains a rating per topic for an example assessment:\n\u003c/p\u003e\n\n\u003ctable class=\"table table-striped\"\u003e\n\t\u003cthead\u003e\n\t\t\u003ctr\u003e\u003cth\u003eMaturity Level\u003c/th\u003e\u003cth\u003eCriteria\u003c/th\u003e\u003cth\u003eRating\u003c/th\u003e\u003c/tr\u003e\n\t\u003c/thead\u003e\n\t\u003ctbody\u003e\n\t\t\u003ctr\u003e\u003ctd\u003e1\u003c/td\u003e\u003ctd\u003eRoles are assigned in ad-hoc manner.\u003c/td\u003e\u003ctd\u003eMet or exceeded (1)\u003c/td\u003e\u003c/tr\u003e\n\t\t\u003ctr\u003e\u003ctd\u003e1\u003c/td\u003e\u003ctd\u003eAvailability requirements are collected in ad-hoc manner and are not quantified.\u003c/td\u003e\u003ctd\u003eMet or exceeded (1)\u003c/td\u003e\u003c/tr\u003e\n\t\t\u003ctr\u003e\u003ctd\u003e2\u003c/td\u003e\u003ctd\u003eInitial attempts to assign roles across development team, solution architecture and architecture review board. Basic consistency on across projects exists.\u003c/td\u003e\u003ctd\u003eMet or exceeded (1)\u003c/td\u003e\u003c/tr\u003e\n\t\t\u003ctr\u003e\u003ctd\u003e2\u003c/td\u003e\u003ctd\u003eOperational standards are being established with respect to availability, including documentation and training, to support high availability at network, host, and application levels.\u003c/td\u003e\u003ctd\u003eMet or exceeded (1)\u003c/td\u003e\u003c/tr\u003e\n\t\t\u003ctr\u003e\u003ctd\u003e3\u003c/td\u003e\u003ctd\u003eGroup-wide roles across development team, solution architecture, architecture review board are defined and followed.\u003c/td\u003e\u003ctd\u003ePartially met (0.5)\u003c/td\u003e\u003c/tr\u003e\n\t\t\u003ctr\u003e\u003ctd\u003e3\u003c/td\u003e\u003ctd\u003eGroup-wide requirements process for availability is established and followed. It includes specification of quantifiable availability goals by business stakeholders. SLAs and SLOs are established.\u003c/td\u003e\u003ctd\u003ePartially met (0.5)\u003c/td\u003e\u003c/tr\u003e\n\t\t\u003ctr\u003e\u003ctd\u003e4\u003c/td\u003e\u003ctd\u003eAvailability metrics such as Mean Time to Failure (MTTF) and Mean Time to Recovery (MTTR) are collected consistently. Metrics along the path between systems are collected consistently.\u003c/td\u003e\u003ctd\u003eNot met (0)\u003c/td\u003e\u003c/tr\u003e\n\t\t\u003ctr\u003e\u003ctd\u003e5\u003c/td\u003e\u003ctd\u003eAvailability metrics are fed back into the SDLC or vendor processes to improve availability.\u003c/td\u003e\u003ctd\u003e\tPartially met (0.5)\u003c/td\u003e\u003c/tr\u003e\n\t\u003c/tbody\u003e\n\u003c/table\u003e\n\nIn this example, the interim values are:\n\n*\tMax maturity: 3 (the first criteria with “Not met” is a Level 4 criteria, therefore max maturity becomes 3).\n*\tBase score: 5\n*\tBase number of criteria : 6\n*\tExtended score : 0.5\n*\tExtended number of criteria: 2\n\n\nTherefore, the final topic score, in this example, works out to be:\n      \n    (5 / 6) * 3 + (0.5/2) = 2.75\n\n\n\u003ch3 class=\"display-6\"\u003eOverall Score\u003c/h3\u003e\n\u003cp\u003e\nThe overall score is a simple average over the score of each topic. Supposing a given assessment yields the following topic scores:\n\n\u003ctable class=\"table table-striped\"\u003e\n\t\u003cthead\u003e\n\t\t\u003ctr\u003e\u003cth\u003eTopic\u003c/th\u003e\u003cth\u003eMaturity Level\u003c/th\u003e\u003c/tr\u003e\n\t\u003c/thead\u003e\n\t\u003ctbody\u003e\n\t\t\u003ctr\u003e\u003ctd\u003eAvailability Developing\u003c/td\u003e\u003ctd\u003e(2.7)\u003c/td\u003e\u003c/tr\u003e\n\t\t\u003ctr\u003e\u003ctd\u003ePerformance\tDeveloping\u003c/td\u003e\u003ctd\u003e(2.6)\u003c/td\u003e\u003c/tr\u003e\n\t\t\u003ctr\u003e\u003ctd\u003eScalability\tDeveloping\u003c/td\u003e\u003ctd\u003e(2)\u003c/td\u003e\u003c/tr\u003e\n\t\t\u003ctr\u003e\u003ctd\u003eMaintainability\tDeveloping\u003c/td\u003e\u003ctd\u003e(3.3)\u003c/td\u003e\u003c/tr\u003e\n\t\t\u003ctr\u003e\u003ctd\u003eSecurity Defined\u003c/td\u003e\u003ctd\u003e(3.7)\u003c/td\u003e\u003c/tr\u003e\n\t\t\u003ctr\u003e\u003ctd\u003eOrganisational Architectural Alignment\tDeveloping\u003c/td\u003e\u003ctd\u003e(1.9)\u003c/td\u003e\u003c/tr\u003e\n\t\t\u003ctr\u003e\u003ctd\u003eSDLC Process Initial\u003c/td\u003e\u003ctd\u003e(2.6)\u003c/td\u003e\u003c/tr\u003e\n\t\t\u003ctr\u003e\u003ctd\u003eChange Management Defined\u003c/td\u003e\u003ctd\u003e(2.8)\u003c/td\u003e\u003c/tr\u003e\n\t\t\u003ctr\u003e\u003ctd\u003eIncident Management\tDefined\u003c/td\u003e\u003ctd\u003e(2) \u003c/td\u003e\u003c/tr\u003e\n\t\t\u003ctr\u003e\u003ctd\u003eDisaster Recovery Defined\u003c/td\u003e\u003ctd\u003e(3.4)\u003c/td\u003e\u003c/tr\u003e\n\t\u003c/tbody\u003e\n\u003c/table\u003e\n\n\nFor such an assessment, the overall score becomes 2.7.\n\n\u003c/p\u003e\n"
+                                         }
+                                     ]
+                    },
+                    {
+                        "created_at":  "2022-02-18T06:45:32.305Z",
+                        "updated_at":  "2022-02-18T06:46:08.974Z",
+                        "version":  1,
+                        "createdBy":  {
+                                          "email":  "michael.khan@lab49.com",
+                                          "system":  ""
+                                      },
+                        "updatedBy":  {
+                                          "email":  "michael.khan@lab49.com",
+                                          "system":  ""
+                                      },
+                        "id":  "RTP000002",
+                        "name":  "Report Template 2",
+                        "description":  "",
+                        "domainId":  "DOM000001",
+                        "domain":  {
+                                       "created_at":  "2021-10-12T04:11:56.128Z",
+                                       "updated_at":  "2021-10-12T04:11:56.16Z",
+                                       "version":  0,
+                                       "id":  "DOM000001",
+                                       "name":  "Application Review",
+                                       "description":  "",
+                                       "areas":  null,
+                                       "createdBy":  {
+                                                         "email":  "",
+                                                         "system":  ""
+                                                     },
+                                       "updatedBy":  {
+                                                         "email":  "",
+                                                         "system":  ""
+                                                     }
+                                   },
+                        "sections":  [
+
+                                     ]
+                    }
+                ]
+}

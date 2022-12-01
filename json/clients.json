@@ -1,0 +1,26 @@
+﻿{
+    "results":  [
+                    {
+                        "created_at":  "2021-12-01T23:39:18.858Z",
+                        "updated_at":  "2021-12-01T23:39:18.858Z",
+                        "version":  0,
+                        "id":  "CLI000003",
+                        "name":  "CBA",
+                        "description":  "CBA",
+                        "url":  "https://www.commbank.com.au",
+                        "logo":  {
+                                     "url":  "https://www.commbank.com.au/content/dam/commbank/commBank-logo.svg",
+                                     "fileDataId":  "000000000000000000000000",
+                                     "fileData":  null
+                                 },
+                        "createdBy":  {
+                                          "email":  "arthur.clement@lab49.com",
+                                          "system":  ""
+                                      },
+                        "updatedBy":  {
+                                          "email":  "",
+                                          "system":  ""
+                                      }
+                    }
+                ]
+}
