@@ -1,10 +1,22 @@
 const urls = [
+    "./json/domains.json",
     "./json/areas.json",
     "./json/topics.json",
     "./json/criterias.json",
 ];
 
+
+const maturities = [
+    'Establishing',
+    'Initial',
+    'Developing',
+    'Defined',
+    'Measurable',
+    'Optimizing',
+];
+
 var model = {
+    domains: {},
     areas: {},
     topics: {},
     criterias: {},
@@ -21,6 +33,7 @@ function reduceCriterias(criterias) {
             id: item.id,
             versionId: item.versions[0].versionId,
             maturityLevel: item.versions[0].maturityLevel,
+            maturityLevelText: `${maturities[item.versions[0].maturityLevel]} (L${item.versions[0].maturityLevel})`,
             name: item.name,
             topicId: item.topic ? item.topic.id : item.topicId,
             topicName: item.topic ? item.topic.name : null,
@@ -30,29 +43,25 @@ function reduceCriterias(criterias) {
     return result;
 }
 
+function sortTopics(topics) {
+    let sortedTopics = topics.sort(function (a, b) {
+        let a1 = a.areaName + a.name;
+        let b1 = b.areaName + b.name;
+
+        return +(a1 > b1) || +(a1 === b1) - 1;
+    });
+
+    return sortedTopics;
+}
+
+
 function sortCriterias(criterias) {
-    console.log("[sortCriterias] Criterias In");
-    console.log(criterias);
+    let sortedCriterias = criterias.sort(function (a, b) {
+        let a1 = a.topicName + a.maturityLevel + a.id;
+        let b1 = b.topicName + b.maturityLevel + b.id;
 
-    // temporary array holds objects with position
-    // and length of element
-    var maturities = criterias.map(function (e, i) {
-        return { index: i, value: e.versions[0].maturityLevel };
+        return +(a1 > b1) || +(a1 === b1) - 1;
     });
-
-    // sorting the lengths array containing the lengths of
-    // river names
-    maturities.sort(function (a, b) {
-        return +(a.value > b.value) || +(a.value === b.value) - 1;
-    });
-
-    // copy element back to the array
-    var sortedCriterias = maturities.map(function (e) {
-        return criterias[e.index];
-    });
-
-    console.log("[sortCriterias] Criterias Out");
-    console.log(sortedCriterias);
 
     return sortedCriterias;
 }
@@ -63,9 +72,9 @@ const fetchData = async () => {
         let resJson = await Promise.all(res.map((e) => e.json()));
         resJson = resJson.map((e) => e.results);
 
-        model.areas = resJson[0];
+        model.domains = resJson[0];
 
-        model.topics = resJson[1].map((item) => {
+        model.topics = resJson[2].map((item) => {
             return {
                 id: item.id,
                 name: item.name,
@@ -78,20 +87,18 @@ const fetchData = async () => {
             };
         });
 
-        model.criterias = reduceCriterias(resJson[2]);
-
-        /*
-        model.criterias = resJson[2].map((item) => {
+        model.areas = resJson[1].map((item) => {
             return {
                 id: item.id,
-                versionId: item.versions[0].versionId,
-                maturityLevel: item.versions[0].maturityLevel,
                 name: item.name,
-                topicId: item.topic.id,
-                topicName: item.topic.name,
+                description: item.description,
+                domainId: item.domain.id,
+                domainName: item.domain.name,
+                topics: model.topics.filter(t => t.areaId === item.id),
             };
         });
-        */
+
+        model.criterias = reduceCriterias(resJson[3]);
 
     } catch (err) {
         console.log(err);
@@ -122,6 +129,80 @@ const groupBy = (keys) => (array) =>
         );
         return objectsByKeyValue;
     }, {});
+
+function displayTopicsTable(data) {
+    let container = $("#modelContainer");
+    container.html('');
+
+    data.sort(function (a, b) {
+        return +(a.areaName + a.name > b.areaName + b.name) || +(a.areaName + a.name === b.areaName + b.name) - 1;
+    });
+
+    //container.append($('<h4>', { class: 'text-capitalize', text: name }));
+
+    let $table = $('<table id="dataTable" class="table table-bordered table-sm table-hover"/>');
+
+    // Add some headers
+    let $thead = $('<thead class="table-light">');
+    $thead.append($("<th>", { text: "Id" }));
+    $thead.append($("<th>", { text: "Area" }));
+    $thead.append($("<th>", { text: "Name" }));
+    $thead.append($("<th>", { text: "Description" }));
+
+    let $tbody = $('<tbody class="table-group-divider">');
+    for (let i = 0; i < data.length; i++) {
+        newTr = $("<tr>");
+        newTr.append($("<td>", { text: data[i].id }));
+        newTr.append($("<td>", { text: data[i].areaName }));
+        newTr.append($("<td>", { text: data[i].name }));
+        newTr.append($("<td>", { text: data[i].description }));
+        $tbody.append(newTr);
+    }
+
+    //$table.append('<caption>name</caption>');
+    $table.append($thead);
+    $table.append($tbody);
+    container.append($table);
+
+}
+
+function displayCriteriasTable(data) {
+    let container = $("#modelContainer");
+    container.html('');
+
+    data.sort(function (a, b) {
+        return +(a.topicName + a.maturityLevel > b.topicName + b.maturityLevel) || +(a.topicName + a.maturityLevel === b.topicName + b.maturityLevel) - 1;
+    });
+
+    //container.append($('<h4>', { class: 'text-capitalize', text: name }));
+
+    let $table = $('<table id="dataTable" class="table table-bordered table-sm table-hover"/>');
+
+    // Add some headers
+    let $thead = $('<thead class="table-light">');
+    $thead.append($('<th>', { text: "Id" }));
+    $thead.append($('<th>', { text: "Name" }));
+    $thead.append($('<th>', { text: "Topic", class: "text-center" }));
+    $thead.append($('<th>', { text: "Maturity Level", class: "text-center" }));
+    $thead.append($('<th>', { text: "Version", class: "text-center" }));
+
+    let $tbody = $('<tbody class="table-group-divider">');
+    for (let i = 0; i < data.length; i++) {
+        newTr = $("<tr>");
+        newTr.append($('<td>', { text: data[i].id }));
+        newTr.append($('<td>', { text: data[i].name }));
+        newTr.append($('<td>', { text: data[i].topicName, class: "text-center" }));
+        newTr.append($('<td>', { text: `${maturities[data[i].maturityLevel]} (L${data[i].maturityLevel})`, class: "text-center" }));
+        newTr.append($('<td>', { text: data[i].versionId, class: "text-center" }));
+        $tbody.append(newTr);
+    }
+
+    //$table.append('<caption>name</caption>');
+    $table.append($thead);
+    $table.append($tbody);
+    container.append($table);
+
+}
 
 function displayTopics(parentid, data, container) {
     displayHierarchy(parentid, "topics", data, container);
@@ -155,34 +236,19 @@ function displayTopics(parentid, data, container) {
                         : rows;
             }
 
-            console.log(element.id);
-            console.log(maturityGroups);
-            console.log("max rows: " + rows);
-
             let html = "";
-            html += '<table class="table table-borderless table-sm">';
-            html += "<thead>";
-            html += "<tr>";
-            html +=
-                '<th class="text-center h4" scope="col"><span class="badge text-bg-danger">Establishing</span></th>';
-            html +=
-                '<th class="text-center h4" scope="col"><span class="badge text-bg-secondary">Initial</span></th>';
-            html +=
-                '<th class="text-center h4" scope="col"><span class="badge text-bg-warning">Developing</span></th>';
-            html +=
-                '<th class="text-center h4" scope="col"><span class="badge text-bg-primary">Defined</span></th>';
-            html +=
-                '<th class="text-center h4" scope="col"><span class="badge text-bg-info">Measurable</span></th>';
-            html +=
-                '<th class="text-center h4" scope="col"><span class="badge text-bg-success">Optimizing</span></th>';
-            html += "</tr>";
-            html += "</thead>";
-            html += "<tbody>";
+            html += '<div class="row">';
+
+            for (let x = 0; x < maturities.length; x++) {
+                html += '<div class="col-sm-2 text-center p-2">' + maturities[x] + '</div>';
+            }
+
+            html += '</div>';
 
             for (let r = 0; r < rows; r++) {
-                html += "<tr>";
-                for (let c = 0; c < 6; c++) {
+                html += '<div class="row">';
 
+                for (let c = 0; c < 6; c++) {
                     if (element.name === "Business Environment") {
                         console.log(element);
                     }
@@ -227,20 +293,20 @@ function displayTopics(parentid, data, container) {
                             break;
                     }
 
-                    html += `<td class="text-center fs-6">`;
-                    html += `<div class="card ${bgcolor} mb-3 w-30" style="max-width: 20rem; height: 17rem;">`;
+                    html += '<div class="col-sm-2">';
+                    html += `<div class="card ${bgcolor} mb-3 w-30" style="max-width: 20rem; height: 13rem;">`;
                     html += '<div class="card-body">';
-                    //html += `<h5 class="card-title"><small>${id}${versionId}</small></h5>`;
-                    html += `<p class="card-text fs-6"><small>${name}</small></p>`;
+                    html += `<p class="card-text text-center" style="font-size: smaller">${name}</p>`;
                     html += "</div>";
-                    html += `<div class="card-footer bg-transparent"><small class="text-muted fs-6">${id}${versionId}</small></div>`;
+                    html += `<div class="card-footer bg-transparent">`;
+                    html += `<p class="card-text" style="font-size: smaller">${id}${versionId}</p>`;
                     html += "</div>";
-                    html += `</td>`;
+                    html += "</div>";
+                    html += "</div>";
                 }
-                html += "</tr>";
+
+                html += `</div>`;
             }
-            html += "</tbody>";
-            html += "</table>";
 
             $("#" + bodyid).html(html);
         } catch (error) { }
@@ -306,13 +372,13 @@ function displayHierarchy(parentid, category, data, container) {
 function displayTable(name, container) {
     container.html('');
 
+    if (name === "areas") data = model.areas;
     if (name === "topics") data = model.topics;
     if (name === "criterias") data = model.criterias;
 
-    let $table = $('<table>', {
-        id: "dataTable",
-        class: "table table-bordered table-sm",
-    });
+    container.append($('<h4>', { class: 'text-capitalize', text: name }));
+
+    let $table = $('<table id="dataTable" class="table table-bordered table-sm table-hover"/>');
 
     // Add some headers
     let $thead = $('<thead class="table-light">');
@@ -320,7 +386,7 @@ function displayTable(name, container) {
     $thead.append($("<th>", { text: "Name" }));
     $thead.append($("<th>", { text: "Description" }));
 
-    let $tbody = $("<tbody>");
+    let $tbody = $('<tbody class="table-group-divider">');
     for (let i = 0; i < data.length; i++) {
         newTr = $("<tr>");
         newTr.append($("<td>", { text: data[i].id }));
@@ -329,17 +395,22 @@ function displayTable(name, container) {
         $tbody.append(newTr);
     }
 
-    $table.append('<caption>name</caption>');
+    //$table.append('<caption>name</caption>');
     $table.append($thead);
     $table.append($tbody);
-    let $div = $('<div class="container container-fluid table-responsive"/>');
-    $div.append($table);
-    container.html($div);
+    container.append($table);
+}
+
+function applyFilterTopics(value) {
+    localStorage.setItem('area', value);
+    location.reload();
+}
+
+function applyFilterCriterias(value) {
+    localStorage.setItem('topic', value);
+    location.reload();
 }
 
 $(() => {
-    fetchData().then(() => {
-        //displayModel($("#modelContainer"));
-        displayTable('topics', $('#modelContainer'));
-    });
+    fetchData();
 });
