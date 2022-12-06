@@ -120,13 +120,42 @@
       id="modelContainer"
       class="container container-fluid table-responsive p-2"
     >
-      <table id="dataTable" data-search="true" data-pagination="true">
+      <table
+        id="dataTable"
+        data-search="true"
+        data-search-highlight="true"
+        data-pagination="true"
+      >
         <thead class="table-light">
           <tr>
-            <th data-field="id" data-sortable="true">Id</th>
-            <th data-field="areaName" data-sortable="true">Area</th>
-            <th data-field="name" data-sortable="true">Name</th>
-            <th data-field="description" data-sortable="true">Description</th>
+            <th
+              data-field="id"
+              data-sortable="true"
+              data-search-highlight-formatter="customSearchFormatter"
+            >
+              Id
+            </th>
+            <th
+              data-field="areaName"
+              data-sortable="true"
+              data-search-highlight-formatter="customSearchFormatter"
+            >
+              Area
+            </th>
+            <th
+              data-field="name"
+              data-sortable="true"
+              data-search-highlight-formatter="customSearchFormatter"
+            >
+              Name
+            </th>
+            <th
+              data-field="description"
+              data-sortable="true"
+              data-search-highlight-formatter="customSearchFormatter"
+            >
+              Description
+            </th>
           </tr>
         </thead>
       </table>

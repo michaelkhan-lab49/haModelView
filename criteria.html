@@ -89,44 +89,157 @@
         </div>
       </div>
     </nav>
-    <div class="container container-fluid p-2">
-      <div class="dropdown">
-        <button
-          class="btn btn-secondary btn-sm dropdown-toggle position-relative"
-          type="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          Areas
-        </button>
+    <div class="container container-fluid">
+      <div class="row">
+        <div class="col-sm-2">
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary btn-sm dropdown-toggle position-relative"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Topics
+            </button>
+            <ul class="dropdown-menu" id="dditems"></ul>
+          </div>
+        </div>
+        <div class="col-sm-10">
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary btn-sm dropdown-toggle position-relative"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Maturity Level
+            </button>
+            <ul class="dropdown-menu" id="dditems">
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="javascript:void(0);"
+                  onclick="applyFilterCriteriaByMaturity(null);"
+                  >(All)</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="javascript:void(0);"
+                  onclick="applyFilterCriteriaByMaturity(0);"
+                  >Establishing (L0)</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="javascript:void(0);"
+                  onclick="applyFilterCriteriaByMaturity(1);"
+                  >Initial (L1)</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="javascript:void(0);"
+                  onclick="applyFilterCriteriaByMaturity(2);"
+                  >Developing (L2)</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="javascript:void(0);"
+                  onclick="applyFilterCriteriaByMaturity(3);"
+                  >Defined (L3)</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="javascript:void(0);"
+                  onclick="applyFilterCriteriaByMaturity(4);"
+                  >Measurable (L4)</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="javascript:void(0);"
+                  onclick="applyFilterCriteriaByMaturity(5);"
+                  >Optimizing (L5)</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-        <button
-          id="selecteditem"
-          type="button"
-          class="btn btn-light btn-sm position-relative"
-        >
-          ...
-          <span
-            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+      <div class="row">
+        <div class="col-sm-2 g-3">
+          <button
+            id="selectedtopic"
+            type="button"
+            class="btn btn-light btn-sm position-relative"
           >
-          </span>
-        </button>
-
-        <ul class="dropdown-menu" id="dditems"></ul>
+            ...
+            <span
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+            >
+            </span>
+          </button>
+        </div>
+        <div class="col-sm-10 g-3">
+          <button
+            id="selectedmaturity"
+            type="button"
+            class="btn btn-light btn-sm"
+          >
+            .<span />
+          </button>
+        </div>
       </div>
     </div>
-
     <div
       id="modelContainer"
       class="container container-fluid table-responsive p-2"
     >
-      <table id="dataTable" data-search="true" data-pagination="true">
+      <table
+        id="dataTable"
+        data-search="true"
+        data-search-highlight="true"
+        data-pagination="true"
+      >
         <thead class="table-light">
           <tr>
-            <th data-field="id" data-sortable="true">Id</th>
-            <th data-field="name" data-sortable="true">Name</th>
-            <th data-field="topicName" data-sortable="true">Topic</th>
-            <th data-field="maturityLevelText" data-sortable="true">
+            <th
+              data-field="id"
+              data-sortable="true"
+              data-search-highlight-formatter="customSearchFormatter"
+            >
+              Id
+            </th>
+            <th
+              data-field="name"
+              data-sortable="true"
+              data-search-highlight-formatter="customSearchFormatter"
+            >
+              Name
+            </th>
+            <th
+              data-field="topicName"
+              data-sortable="true"
+              data-search-highlight-formatter="customSearchFormatter"
+            >
+              Topic
+            </th>
+            <th
+              data-field="maturityLevelText"
+              data-sortable="true"
+              data-search-highlight-formatter="customSearchFormatter"
+              data-cell-style="maturityCellStyle"
+            >
               Maturity Level
             </th>
             <th data-field="versionId" data-sortable="true">Version</th>
@@ -138,6 +251,7 @@
     <script>
       $(() => {
         let topic = localStorage.getItem("topic");
+        let maturityLevel = Number(localStorage.getItem("maturityLevel"));
 
         if (
           topic === null ||
@@ -149,7 +263,7 @@
 
         fetchData().then(() => {
           let html =
-            '<li><a class="dropdown-item" href="javascript:void(0);" onclick="applyFilterCriterias(null);">(All)</a></li>';
+            '<li><a class="dropdown-item" href="javascript:void(0);" onclick="applyFilterCriteriaByTopic(null);">(All)</a></li>';
 
           for (var i = 0; i < model.topics.length; i++) {
             const item = model.topics[i].name;
@@ -161,17 +275,35 @@
               aria = ' aria-current="true"';
             }
 
-            html += `<li><a class="dropdown-item${active}"${aria} href="javascript:void(0);" onclick="applyFilterCriterias('${item}');">${item} (${crs})</a></li>`;
+            html += `<li><a class="dropdown-item${active}"${aria} href="javascript:void(0);" onclick="applyFilterCriteriaByTopic('${item}');">${item} (${crs})</a></li>`;
           }
           $("#dditems").html(html);
 
           let criterias = model.criterias;
-          if (topic && topic.length > 0)
-            criterias = criterias.filter((t) => t.topicName === topic);
-          criterias = sortCriterias(criterias);
-          html = `${topic}<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">${criterias.length}</span>`;
+          let criterias2 = [];
 
-          $("#selecteditem").html(html);
+          if (topic && topic.length > 0)
+            criterias = criterias.filter((c) => c.topicName === topic);
+
+          if (maturityLevel >= 0)
+            criterias = criterias.filter(
+              (c) => c.maturityLevel === maturityLevel
+            );
+
+          criterias = sortCriterias(criterias);
+
+          html = `${topic} <span class="badge text-bg-secondary">${criterias.length}</span>`;
+          $("#selectedtopic").html(html);
+
+          if (maturityLevel >= 0) {
+            html = `${maturityText(
+              maturityLevel
+            )} <span class="badge text-bg-secondary">${
+              criterias.length
+            }</span>`;
+            $("#selectedmaturity").html(html);
+          }
+
           $("#dataTable").bootstrapTable({ data: criterias });
         });
       });

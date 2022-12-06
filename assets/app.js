@@ -22,10 +22,33 @@ var model = {
     criterias: {},
 };
 
-$.fn.setClass = function (classes) {
-    this.attr('class', classes);
-    return this;
+window.customSearchFormatter = function (value, searchText) {
+    return value
+        .toString()
+        .replace(
+            new RegExp("(" + searchText + ")", "gim"),
+            '<span style="background-color: pink;border: 1px solid red;border-radius:90px;padding:4px">$1</span>'
+        );
 };
+
+function maturityText(maturityLevel) {
+    return `${maturities[maturityLevel]} (L${maturityLevel})`;
+}
+
+function maturityCellStyle(value, row, index) {
+    var classes = [
+        "text-center text-bg-danger",
+        "text-center text-bg-light",
+        "text-center text-bg-warning",
+        "text-center text-bg-primary",
+        "text-center text-bg-info",
+        "text-center text-bg-success",
+    ]
+
+    return {
+        classes: classes[row.maturityLevel]
+    }
+}
 
 function reduceCriterias(criterias) {
     let result = criterias.map((item) => {
@@ -33,7 +56,7 @@ function reduceCriterias(criterias) {
             id: item.id,
             versionId: item.versions[0].versionId,
             maturityLevel: item.versions[0].maturityLevel,
-            maturityLevelText: `${maturities[item.versions[0].maturityLevel]} (L${item.versions[0].maturityLevel})`,
+            maturityLevelText: maturityText(item.versions[0].maturityLevel),
             name: item.name,
             topicId: item.topic ? item.topic.id : item.topicId,
             topicName: item.topic ? item.topic.name : null,
@@ -406,8 +429,13 @@ function applyFilterTopics(value) {
     location.reload();
 }
 
-function applyFilterCriterias(value) {
+function applyFilterCriteriaByTopic(value) {
     localStorage.setItem('topic', value);
+    location.reload();
+}
+
+function applyFilterCriteriaByMaturity(value) {
+    localStorage.setItem('maturityLevel', value);
     location.reload();
 }
 
