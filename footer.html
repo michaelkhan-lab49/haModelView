@@ -1,0 +1,1 @@
+<p>The footer</p>

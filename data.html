@@ -2,30 +2,119 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Health Assessor Model Viewer</title>
-
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <script
-      src="https://code.jquery.com/jquery-3.6.1.min.js"
-      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
-      integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0="
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="assets/style.css" />
 
     <script src="assets/app.js"></script>
   </head>
+  <body>
+    <div id="navbar"></div>
 
-  <script>
-    $(() => {
-      fetchData().then(() => {
-        document.write(model.topics);
+    <div class="container container-fluid p-2">
+      <div class="row">
+        <div class="col-sm-2">
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary btn-sm dropdown-toggle position-relative"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Areas
+            </button>
+            <ul class="dropdown-menu" id="dditems"></ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-2 g-2">
+          <button id="selecteditem" type="button" class="btn btn-light btn-sm">
+            <span />
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="modelContainer"
+      class="container container-fluid table-responsive p-2">
+      <table
+        id="dataTable"
+        data-search="true"
+        data-search-highlight="true"
+        data-pagination="true">
+        <thead class="table-light">
+          <tr>
+            <th
+              data-field="id"
+              data-sortable="true"
+              data-search-highlight-formatter="customSearchFormatter">
+              Id
+            </th>
+            <th
+              data-field="areaName"
+              data-sortable="true"
+              data-search-highlight-formatter="customSearchFormatter">
+              Area
+            </th>
+            <th
+              data-field="name"
+              data-sortable="true"
+              data-search-highlight-formatter="customSearchFormatter">
+              Name
+            </th>
+            <th
+              data-field="description"
+              data-sortable="true"
+              data-search-highlight-formatter="customSearchFormatter">
+              Description
+            </th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+
+    <script>
+      $(() => {
+        let area = localStorage.getItem("area");
+
+        if (
+          area === null ||
+          area === "null" ||
+          area === undefined ||
+          area === "undefined"
+        )
+          area = "";
+
+        fetchData().then(() => {
+          let html = `<li><a class="dropdown-item" href="javascript:void(0);" onclick="applyFilterTopics(null);">(All)</a></li>`;
+
+          for (var i = 0; i < model.areas.length; i++) {
+            const item = model.areas[i].name;
+            const tops = model.areas[i].topics.length;
+            let active = "";
+            let aria = "";
+            if (item === area) {
+              active = " active";
+              aria = ' aria-current="true"';
+            }
+
+            html += `<li><a class="dropdown-item${active}"${aria} href="javascript:void(0);" onclick="applyFilterTopics('${item}');">${item} (${tops})</a></li>`;
+          }
+          $("#dditems").html(html);
+
+          let topics = model.topics;
+          if (area && area.length > 0)
+            topics = topics.filter((t) => t.areaName === area);
+          topics = sortTopics(topics);
+
+          html = `${area} <span class="badge text-bg-secondary">${topics.length}</span>`;
+
+          $("#selecteditem").html(html);
+          $("#dataTable").bootstrapTable({ data: topics });
+        });
       });
-    });
-  </script>
-  <body></body>
+    </script>
+  </body>
 </html>

@@ -5,6 +5,17 @@ const urls = [
     "./json/criterias.json",
 ];
 
+const gitpath = 'https://raw.githubusercontent.com/lab49/healthAssessorModel/main/cmm2';
+
+const giturls = [
+    { file: 'availability.json', token: 'GHSAT0AAAAAAB3WTIAN7TFY7HVBABQBTBQ4Y4PABZQ', },
+    { file: 'engineering.json', token: 'GHSAT0AAAAAAB3WTIANMDCNYB7LJHOX3HHEY4PACKA', },
+    { file: 'incident-management.json', token: 'GHSAT0AAAAAAB3WTIAMVEQRONNYXFSECX5GY4PADWA', },
+    { file: 'maintainability.json', token: 'GHSAT0AAAAAAB3WTIAM4S5NEC7OXWLSVVLGY4PADXA', },
+    { file: 'monitoring.json', token: 'GHSAT0AAAAAAB3WTIAN7DDDPIAM77AJLQZSY4PADYQ', },
+    { file: 'scalability.json', token: 'GHSAT0AAAAAAB3WTIAMTGQIMFKSBCOYFJHKY4PAD2A', },
+    { file: 'sdlc-process.json', token: 'GHSAT0AAAAAAB3WTIAM5ZKSASFGY6UO7D3EY4PAD3A', },
+];
 
 const maturities = [
     'Establishing',
@@ -19,6 +30,7 @@ var model = {
     domains: {},
     areas: {},
     topics: {},
+    topicsv2: {},
     criterias: {},
 };
 
@@ -33,60 +45,6 @@ window.customSearchFormatter = function (value, searchText) {
 
 function maturityText(maturityLevel) {
     return `${maturities[maturityLevel]} (L${maturityLevel})`;
-}
-
-function maturityCellStyle(value, row, index) {
-    var classes = [
-        "text-center text-bg-danger",
-        "text-center text-bg-light",
-        "text-center text-bg-warning",
-        "text-center text-bg-primary",
-        "text-center text-bg-info",
-        "text-center text-bg-success",
-    ]
-
-    return {
-        classes: classes[row.maturityLevel]
-    }
-}
-
-function reduceCriterias(criterias) {
-    let result = criterias.map((item) => {
-        return {
-            id: item.id,
-            versionId: item.versions[0].versionId,
-            maturityLevel: item.versions[0].maturityLevel,
-            maturityLevelText: maturityText(item.versions[0].maturityLevel),
-            name: item.name,
-            topicId: item.topic ? item.topic.id : item.topicId,
-            topicName: item.topic ? item.topic.name : null,
-        };
-    });
-
-    return result;
-}
-
-function sortTopics(topics) {
-    let sortedTopics = topics.sort(function (a, b) {
-        let a1 = a.areaName + a.name;
-        let b1 = b.areaName + b.name;
-
-        return +(a1 > b1) || +(a1 === b1) - 1;
-    });
-
-    return sortedTopics;
-}
-
-
-function sortCriterias(criterias) {
-    let sortedCriterias = criterias.sort(function (a, b) {
-        let a1 = a.topicName + a.maturityLevel + a.id;
-        let b1 = b.topicName + b.maturityLevel + b.id;
-
-        return +(a1 > b1) || +(a1 === b1) - 1;
-    });
-
-    return sortedCriterias;
 }
 
 const fetchData = async () => {
@@ -128,6 +86,69 @@ const fetchData = async () => {
     }
 };
 
+const groupBy = (keys) => (array) =>
+    array.reduce((objectsByKeyValue, obj) => {
+        const value = keys.map((key) => obj[key]).join("-");
+        objectsByKeyValue[value] = (objectsByKeyValue[value] || []).concat(
+            obj
+        );
+        return objectsByKeyValue;
+    }, {});
+
+function maturityCellStyle(value, row, index) {
+    var classes = [
+        "text-center text-bg-danger",
+        "text-center text-bg-light",
+        "text-center text-bg-warning",
+        "text-center text-bg-primary",
+        "text-center text-bg-info",
+        "text-center text-bg-success",
+    ]
+
+    return {
+        classes: classes[row.maturityLevel]
+    }
+}
+
+function reduceCriterias(criterias) {
+    let result = criterias.map((item) => {
+        return {
+            id: item.id,
+            versionId: item.versions[0].versionId,
+            maturityLevel: item.versions[0].maturityLevel,
+            maturityLevelText: maturityText(item.versions[0].maturityLevel),
+            name: item.name,
+            topicId: item.topic ? item.topic.id : item.topicId,
+            topicName: item.topic ? item.topic.name : null,
+        };
+    });
+
+    return result;
+}
+
+
+function sortTopics(topics) {
+    let sortedTopics = topics.sort(function (a, b) {
+        let a1 = a.areaName + a.name;
+        let b1 = b.areaName + b.name;
+
+        return +(a1 > b1) || +(a1 === b1) - 1;
+    });
+
+    return sortedTopics;
+}
+
+function sortCriterias(criterias) {
+    let sortedCriterias = criterias.sort(function (a, b) {
+        let a1 = a.topicName + a.maturityLevel + a.id;
+        let b1 = b.topicName + b.maturityLevel + b.id;
+
+        return +(a1 > b1) || +(a1 === b1) - 1;
+    });
+
+    return sortedCriterias;
+}
+
 function displayModel(container) {
     container.html('');
 
@@ -143,15 +164,6 @@ function displayModel(container) {
         displayTopics(element.id, element.topics, $("#" + bodyid));
     }
 }
-
-const groupBy = (keys) => (array) =>
-    array.reduce((objectsByKeyValue, obj) => {
-        const value = keys.map((key) => obj[key]).join("-");
-        objectsByKeyValue[value] = (objectsByKeyValue[value] || []).concat(
-            obj
-        );
-        return objectsByKeyValue;
-    }, {});
 
 function displayTopicsTable(data) {
     let container = $("#modelContainer");
@@ -439,6 +451,14 @@ function applyFilterCriteriaByMaturity(value) {
     location.reload();
 }
 
-$(() => {
-    fetchData();
+$(async () => {
+    $("#navbar").load("navbar.html");
+    //$("#footer").load("footer.html");
+
+    await fetchData();
+
+    //let res = await Promise.all(giturls.map((e) => fetch(`${gitpath}/${e.file}?token=${e.token}`)));
+    //let resJson = await Promise.all(res.map((e) => e.json()));
+
+    //model.topicsv2 = resJson;
 });
