@@ -5,6 +5,16 @@ const urls = [
     "./json/criterias.json",
 ];
 
+const urlsv2 = [
+    './jsonv2/availability.json',
+    './jsonv2/engineering.json',
+    './jsonv2/incident-management.json',
+    './jsonv2/maintainability.json',
+    './jsonv2/monitoring.json',
+    './jsonv2/scalability.json',
+    './jsonv2/sdlc-process.json',
+];
+
 const gitpath = 'https://raw.githubusercontent.com/lab49/healthAssessorModel/main/cmm2';
 
 const giturls = [
@@ -23,15 +33,21 @@ const maturities = [
     'Developing',
     'Defined',
     'Measurable',
-    'Optimizing',
+    'Optimising',
 ];
 
 var model = {
-    domains: {},
-    areas: {},
-    topics: {},
-    topicsv2: {},
-    criterias: {},
+    domains: [],
+    areas: [],
+    topics: [],
+    criterias: [],
+};
+
+var modelv2 = {
+    domains: [],
+    areas: [],
+    topics: [],
+    criterias: [],
 };
 
 window.customSearchFormatter = function (value, searchText) {
@@ -43,8 +59,17 @@ window.customSearchFormatter = function (value, searchText) {
         );
 };
 
-function maturityText(maturityLevel) {
-    return `${maturities[maturityLevel]} (L${maturityLevel})`;
+function maturityFormat(level) {
+    return `${maturities[level]} (L${level})`;
+}
+
+function maturityText(level) {
+    return maturities[level];
+}
+
+function maturityLevel(text) {
+    text = text.replace('z', 's');
+    return maturities.findIndex(m => m === text);
 }
 
 const fetchData = async () => {
@@ -86,6 +111,75 @@ const fetchData = async () => {
     }
 };
 
+
+const fetchDatav2 = async () => {
+    try {
+        let res = await Promise.all(urlsv2.map((e) => fetch(e)));
+        let resJson = await Promise.all(res.map((e) => e.json()));
+        //resJson = resJson.map((e) => e.results);
+        console.log(resJson);
+
+        for (let i = 0; i < resJson.length; i++) {
+            const element = resJson[i];
+            console.log(element);
+        }
+
+        modelv2.topics = resJson
+
+        modelv2.topics = modelv2.topics.map((item) => {
+            return {
+                _id: item._id,
+                id: item._id,
+                name: item.name,
+                description: item.description,
+                domain: item.domain,
+                area: item.area,
+                components: item.components,
+                criterias: reduceComponentCriterias(item),
+            };
+        }).sort((a, b) => a.name.localeCompare(b.name));
+
+        modelv2.domains = resJson.map((item) => {
+            return { name: item.domain };
+        });
+
+        modelv2.areas = resJson.map((item) => {
+            return { name: item.area, topics: [], };
+        }).sort((a, b) => a.name.localeCompare(b.name));
+
+        modelv2.areas = [
+            ...new Map(modelv2.areas.map((item) => [item["name"], item])).values(),
+        ];
+
+        modelv2.criterias = resJson.reduce((prev, next) => {
+            let crs = reduceComponentCriterias(next);
+            /*
+            let topic = next;
+            let crs = next.components.reduce((prev, next) => {
+                let criteria = next.criteria.map((item) => {
+                    return {
+                        _id: item._id,
+                        id: item._id,
+                        version: 0,
+                        maturityLevel: maturityLevel(item.maturityLevel),
+                        maturityLevelText: maturityFormat(maturityLevel(item.maturityLevel)),
+                        name: item.name,
+                        topic: topic.name,
+                    };
+                });
+                return prev.concat(criteria);
+            }, []);
+            */
+            return prev.concat(crs);
+        }, []);
+
+        console.log(modelv2);
+
+    } catch (err) {
+        console.log(err);
+    }
+};
+
 const groupBy = (keys) => (array) =>
     array.reduce((objectsByKeyValue, obj) => {
         const value = keys.map((key) => obj[key]).join("-");
@@ -116,16 +210,35 @@ function reduceCriterias(criterias) {
             id: item.id,
             versionId: item.versions[0].versionId,
             maturityLevel: item.versions[0].maturityLevel,
-            maturityLevelText: maturityText(item.versions[0].maturityLevel),
+            maturityLevelText: maturityFormat(item.versions[0].maturityLevel),
             name: item.name,
             topicId: item.topic ? item.topic.id : item.topicId,
             topicName: item.topic ? item.topic.name : null,
+            sort: (item.topic ? item.topic.name : null) + item.versions[0].maturityLevel + item.versions[0].versionId,
         };
     });
 
     return result;
 }
 
+function reduceComponentCriterias(topic) {
+    return topic.components.reduce((prev, next) => {
+        let criteria = next.criteria.map((item) => {
+            return {
+                _id: item._id,
+                id: item._id,
+                version: 0,
+                maturityLevel: maturityLevel(item.maturityLevel),
+                maturityLevelText: maturityFormat(maturityLevel(item.maturityLevel)),
+                name: item.name,
+                topic: topic.name,
+                component: next.name,
+                sort: (topic.name ? topic.name : null) + next.name + maturityLevel(item.maturityLevel),
+            };
+        });
+        return prev.concat(criteria);
+    }, []);
+}
 
 function sortTopics(topics) {
     let sortedTopics = topics.sort(function (a, b) {
@@ -455,10 +568,12 @@ $(async () => {
     $("#navbar").load("navbar.html");
     //$("#footer").load("footer.html");
 
+    await fetchDatav2();
     await fetchData();
 
-    //let res = await Promise.all(giturls.map((e) => fetch(`${gitpath}/${e.file}?token=${e.token}`)));
-    //let resJson = await Promise.all(res.map((e) => e.json()));
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
-    //model.topicsv2 = resJson;
 });
+
+

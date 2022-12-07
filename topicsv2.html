@@ -51,13 +51,13 @@
         <thead class="table-light">
           <tr>
             <th
-              data-field="id"
+              data-field="_id"
               data-sortable="true"
               data-search-highlight-formatter="customSearchFormatter">
               Id
             </th>
             <th
-              data-field="areaName"
+              data-field="area"
               data-sortable="true"
               data-search-highlight-formatter="customSearchFormatter">
               Area
@@ -94,9 +94,9 @@
         fetchData().then(() => {
           let html = `<li><a class="dropdown-item" href="javascript:void(0);" onclick="applyFilterTopics(null);">(All)</a></li>`;
 
-          for (var i = 0; i < model.areas.length; i++) {
-            const item = model.areas[i].name;
-            const tops = model.areas[i].topics.length;
+          for (var i = 0; i < modelv2.areas.length; i++) {
+            const item = modelv2.areas[i].name;
+            const tops = modelv2.areas[i].topics.length;
             let active = "";
             let aria = "";
             if (item === area) {
@@ -108,10 +108,11 @@
           }
           $("#dditems").html(html);
 
-          let topics = model.topics;
-          if (area && area.length > 0)
-            topics = topics.filter((t) => t.areaName === area);
-          topics = sortTopics(topics);
+          let topics = modelv2.topics;
+          console.log(topics);
+          //if (area && area.length > 0)
+          //  topics = topics.filter((t) => t.areaName === area);
+          //topics = sortTopics(topics);
 
           html = `${area} <span class="badge text-bg-secondary">${topics.length}</span>`;
 

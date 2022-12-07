@@ -1,0 +1,224 @@
+{
+  "_id": "TOP000003",
+  "name": "Incident Management",
+  "description": "The tooling and processes enabling an appropriate response to incidents and the alignment with broader incident management frameworks throughout the organisation.",
+  "domain": "Application Review",
+  "area": "Operations",
+  "components": [
+    {
+      "_id": "CMP000018",
+      "name": "Communications",
+      "definition": "",
+      "criteria": [
+        {
+          "_id": "CRI000109",
+          "name": "Communications channels and methods during an incident are well understood across the team",
+          "maturityLevel": "Developing",
+          "source": ""
+        },
+        {
+          "_id": "CRI000110",
+          "name": "RC.CO-3: Recovery activities are communicated to internal and external stakeholders as well as executive and management teams",
+          "maturityLevel": "Defined",
+          "source": ""
+        },
+        {
+          "_id": "CRI000111",
+          "name": "RC.CO-1: Public relations are managed",
+          "maturityLevel": "Defined",
+          "source": ""
+        },
+        {
+          "_id": "CRI000112",
+          "name": "RC.CO-2: Reputation is repaired after an incident ",
+          "maturityLevel": "Defined",
+          "source": ""
+        }
+      ]
+    },
+    {
+      "_id": "CMP000019",
+      "name": "Tooling",
+      "definition": "",
+      "criteria": [
+        {
+          "_id": "CRI000113",
+          "name": "The tooling and processes enabling ops  to respond appropriately to incidents and align with broader incident management frameworks throughout the organisation. Furthermore, the degree of tie-in with respect to incident management and the SDLC.",
+          "maturityLevel": "Initial",
+          "source": ""
+        },
+        {
+          "_id": "CRI000114",
+          "name": "Adhoc tooling is available to assist in pinpointing the root cause of issues",
+          "maturityLevel": "Developing",
+          "source": ""
+        }
+      ]
+    },
+    {
+      "_id": "CMP000020",
+      "name": "Process",
+      "definition": "",
+      "criteria": [
+        {
+          "_id": "CRI000115",
+          "name": "Formalised process that is followed across the organisation",
+          "maturityLevel": "Initial",
+          "source": ""
+        },
+        {
+          "_id": "CRI000116",
+          "name": "Defined 'categories' or 'severities' of incidents, with a clear understanding of what each category means for this service",
+          "maturityLevel": "Initial",
+          "source": ""
+        },
+        {
+          "_id": "CRI000117",
+          "name": "Structured approach to problem analysis and capture of detail as tailored for the team",
+          "maturityLevel": "Developing",
+          "source": ""
+        },
+        {
+          "_id": "CRI000118",
+          "name": "Root-cause analysis results for every incident is captured and fed back into SDLC",
+          "maturityLevel": "Developing",
+          "source": ""
+        },
+        {
+          "_id": "CRI000119",
+          "name": "Regular rehearsals and dry-runs of incident scenarios",
+          "maturityLevel": "Defined",
+          "source": ""
+        },
+        {
+          "_id": "CRI000120",
+          "name": "RS.MI-3: Newly identified vulnerabilities are mitigated or documented as accepted risks",
+          "maturityLevel": "Defined",
+          "source": ""
+        }
+      ]
+    },
+    {
+      "_id": "CMP000021",
+      "name": "Metrics",
+      "definition": "The metrics used to establish the quality of the engineering being delivered.",
+      "criteria": [
+        {
+          "_id": "CRI000121",
+          "name": "Well-established metrics for overall service health, including volume and severity of incidents",
+          "maturityLevel": "Defined",
+          "source": ""
+        },
+        {
+          "_id": "CRI000122",
+          "name": "Well-established metrics for incident response - e.g. time to first response, MTTD, MTTR, no. of escalations (e.g. L1 to L2)",
+          "maturityLevel": "Defined",
+          "source": ""
+        },
+        {
+          "_id": "CRI000123",
+          "name": "Regular reporting on metrics to surface patterns and opportunities",
+          "maturityLevel": "Defined",
+          "source": ""
+        },
+        {
+          "_id": "CRI000124",
+          "name": "Cost per incident is well understood (can be modelled, for example, via T&M)",
+          "maturityLevel": "Measurable",
+          "source": ""
+        },
+        {
+          "_id": "CRI000125",
+          "name": "Well-established metrics, with targets for continuous improvement.",
+          "maturityLevel": "Optimising",
+          "source": ""
+        },
+        {
+          "_id": "CRI000126",
+          "name": "RS.MI-2: Incidents are mitigated",
+          "comment": "duplicate",
+          "maturityLevel": "Defined",
+          "source": ""
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "_id": "QUE000072",
+      "definition": "What are the major P1/P2 incidents that happened over the last 6 months"
+    },
+    {
+      "_id": "QUE000073",
+      "definition": "What were the nature of the incidents / which systems have been impacted? Any general themes? (e.g. networking, hardware, software)"
+    },
+    {
+      "_id": "QUE000074",
+      "definition": "What are your monitoring and alerting tools / processes? "
+    },
+    {
+      "_id": "QUE000075",
+      "definition": "How are you accessing production? Are you using a jump-box, TPAM, one‐time password?"
+    },
+    {
+      "_id": "QUE000076",
+      "definition": "Do you have audits of all production activity? "
+    },
+    {
+      "_id": "QUE000077",
+      "definition": "Are you aware of all business and/or system specific SLAs/SLOs while fixing production issues?"
+    },
+    {
+      "_id": "QUE000078",
+      "definition": "Do you have any incident runbook and knowledge-base repositories to refer to in case of incident?"
+    },
+    {
+      "_id": "QUE000079",
+      "definition": "What are your on‐duty call process?"
+    },
+    {
+      "_id": "QUE000080",
+      "definition": "What are the communication channel and methods during an incident?"
+    },
+    {
+      "_id": "QUE000081",
+      "definition": "Do you have any specific approach to problem analysis during an incident? "
+    },
+    {
+      "_id": "QUE000082",
+      "definition": "Do you use any tools in particular to pinpoint the root cause of issues? (e.g. Splunk, AppDynamics…)"
+    },
+    {
+      "_id": "QUE000083",
+      "definition": "holding any Incident Retrospective (PIR, Post‐incident review) meeting? How frequent?"
+    },
+    {
+      "_id": "QUE000084",
+      "definition": "Are you rehearsing regularly the processes and resolution steps of past incidents? "
+    },
+    {
+      "_id": "QUE000085",
+      "definition": "Are you gathering any specific health metrics (volume, severity of incidents, number of escalations)?"
+    },
+    {
+      "_id": "QUE000086",
+      "definition": "Any additional advanced metrics such as MTTD, MTTR, number of escalations?"
+    },
+    {
+      "_id": "QUE000087",
+      "definition": "Are you reporting/reflecting on existing metrics to spot any trends/patterns?"
+    },
+    {
+      "_id": "QUE000088",
+      "definition": "Are you consistently determining the cost per previous incidents?"
+    },
+    {
+      "_id": "QUE000174",
+      "definition": "Incident Management"
+    },
+    {
+      "_id": "QUE000175",
+      "definition": "Is there any assurance protocol surrounding the close off of the Incident?"
+    }
+  ]
+}

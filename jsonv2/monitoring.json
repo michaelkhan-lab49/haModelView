@@ -1,0 +1,199 @@
+{
+  "_id": "TOP000005",
+  "name": "Monitoring",
+  "description": "The process of measuring application performance, availability and user experience and using this data to identify and resolve application issues before they impact customers",
+  "domain": "Application Review",
+  "area": "Operations",
+  "components": [
+    {
+      "_id": "CMP000027",
+      "name": "Logs and Metrics",
+      "definition": "logs and metrics from all components can be accessed from a central location",
+      "criteria": [
+        {
+          "_id": "CRI000140",
+          "name": "logs and metrics are generated on applications/components but are not automaticallys collected into a central place ",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI000141",
+          "name": "logs and metrics are collected into a shared location known to the squad/team but aren't accessible by the group tools ",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000142",
+          "name": "logs and metrics from all components are collected in the group logging and monitoring tools where they can be analysed",
+          "maturityLevel": "Defined"
+        }
+      ]
+    },
+    {
+      "_id": "CMP000028",
+      "name": "Issue detection/alert generation",
+      "definition": "tools are used to analyse the logs so that issues can be identified across multiple components and alerts automatically raised",
+      "criteria": [
+        {
+          "_id": "CRI000143",
+          "name": "searching for issues is done on adhoc basis e.g. manually grepping through logs",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI000144",
+          "name": "teams/squads have their own techniques for identifying issues which aren't integrated with the group's operational procedures",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000145",
+          "name": "the groups tools are used and have been configured so that alerts are automatically raised and fed into the groups operational procedures",
+          "maturityLevel": "Defined"
+        },
+        {
+          "_id": "CRI000146",
+          "name": "the ongoing effectiveness of the log analysis is measured to ensure that issues are being detected",
+          "maturityLevel": "Measurable"
+        },
+        {
+          "_id": "CRI000147",
+          "name": "when new issues are recognised, group tools are reconfigured to raise new alerts",
+          "maturityLevel": "Optimising"
+        }
+      ]
+    },
+    {
+      "_id": "CMP000029",
+      "name": "Dashboard",
+      "definition": "log entries, metrics and alert are displayed in a centralised location where they can be effectively managed",
+      "criteria": [
+        {
+          "_id": "CRI000148",
+          "name": "teams have their own ways of presenting monitoring, alert and metrics, which aren't integrated with the group's operational procedures",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000149",
+          "name": "all monitoring, alerts and metrics from all applications/components can be viewed and managed from a single dashboard in group tools",
+          "maturityLevel": "Defined"
+        }
+      ]
+    },
+    {
+      "_id": "CMP000030",
+      "name": "Tracing",
+      "definition": "the path of user requests/messages should be easy to follow through all components so that issues can be more easily understood and resolved",
+      "criteria": [
+        {
+          "_id": "CRI000150",
+          "name": "applications/components have their own unique request identifiers which are not passed between components",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000151",
+          "name": "All user requests/messages have a unique identifier that is kept and logged as the request moves between components . alternately in very high volume systems it is possible to turn on the generation of a unique identifier for a subset of requets for a limited time",
+          "maturityLevel": "Defined"
+        }
+      ]
+    },
+    {
+      "_id": "CMP000031",
+      "name": "Implementation",
+      "definition": "applications/components must be developed with sufficient logging and metrics for them to be supportable\n. There should be standards that govern and guide developers in what must be done.\nWhere third party components or services are used these should integrate and allow aggregation into common monitoring solutions. ",
+      "criteria": [
+        {
+          "_id": "CRI000152",
+          "name": "developers add some logging and monitoring to applications but it is not comprehensive nor done by all squad/team members",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI000153",
+          "name": "teams/squads have created their own approach but this may not be comprehensive and won't integrate with group tools so support will be dfiicult and deficient ",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000154",
+          "name": "developers follow  group-wide standards and guidelines that help developers recognise what logging and monitoring needs to be inplace in applications in order to for those applications to be supportable ",
+          "maturityLevel": "Defined"
+        }
+      ]
+    },
+    {
+      "_id": "CMP000032",
+      "name": "Non-functional testing",
+      "definition": "monitoring and alerting and metrics are tested to ensure that the platform/system remains supportable",
+      "criteria": [
+        {
+          "_id": "CRI000155",
+          "name": "DE.DP-5: Detection processes are continuously improved",
+          "maturityLevel": "Optimising"
+        }
+      ]
+    },
+    {
+      "_id": "CMP000033",
+      "name": "Detection and Scanning",
+      "definition": "",
+      "criteria": [
+        {
+          "_id": "CRI000156",
+          "name": "DE.CM-1: The network is monitored to detect potential cybersecurity events",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI000157",
+          "name": "DE.DP-1: Roles and responsibilities for detection are well defined to ensure accountability",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI000158",
+          "name": "DE.CM-2: The physical environment is monitored to detect potential cybersecurity events",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000159",
+          "name": "DE.CM-3: Personnel activity is monitored to detect potential cybersecurity events",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000160",
+          "name": "DE.CM-4: Malicious code is detected",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000161",
+          "name": "DE.CM-5: Unauthorized mobile code is detected",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000162",
+          "name": "DE.DP-2: Detection activities comply with all applicable requirements",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000163",
+          "name": "DE.DP-3: Detection processes are tested",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000164",
+          "name": "DE.CM-6: External service provider activity is monitored to detect potential cybersecurity events",
+          "maturityLevel": "Defined"
+        },
+        {
+          "_id": "CRI000165",
+          "name": "DE.CM-7: Monitoring for unauthorized personnel, connections, devices, and software is performed",
+          "maturityLevel": "Defined"
+        },
+        {
+          "_id": "CRI000166",
+          "name": "DE.CM-8: Vulnerability scans are performed",
+          "maturityLevel": "Defined"
+        },
+        {
+          "_id": "CRI000167",
+          "name": "DE.DP-4: Event detection information is communicated",
+          "maturityLevel": "Defined"
+        }
+      ]
+    }
+  ],
+  "questions": []
+}

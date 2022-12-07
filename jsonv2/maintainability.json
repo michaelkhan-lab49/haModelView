@@ -1,0 +1,140 @@
+{
+  "_id": "TOP000004",
+  "name": "Maintainability",
+  "description": "The set of attributes that bear on the effort needed to make specified modifications to a system or service. The ease with which a system or component may be modified to correct faults, improve performance or adapt to a changed environment. The ease with which a system may be retained in, or restored to a state in which it performs its required functions.",
+  "domain": "Application Review",
+  "area": "Technology",
+  "components": [
+    {
+      "_id": "CMP000022",
+      "name": "System Modules",
+      "definition": "knowledge and documentation of system modules",
+      "criteria": [
+        {
+          "_id": "CRI000127",
+          "name": "Knowledge of the system modules and their inter-relationships necessary to specify new features, develop new features, or perform upgrades exists - but may be organised in ad-hoc manner.  Some change development process from requirements to implementation exists but is dependent upon the skills of individuals.",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI000128",
+          "name": "Standards for documenting module boundaries (APIs, etc.) are emerging at individual team level.",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000129",
+          "name": "Standards for documenting dependencies between modules are emerging at individual team level. Some impact assessment is performed.",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000130",
+          "name": "Standards for documenting dependencies between modules are defined at the organisation level. Formal impact assessment is performed in a consistent manner.",
+          "maturityLevel": "Defined"
+        }
+      ]
+    },
+    {
+      "_id": "CMP000023",
+      "name": "Maintenance Automation",
+      "definition": "Automated tooling being used for maintenance",
+      "criteria": [
+        {
+          "_id": "CRI000131",
+          "name": "Some maintenance automation tooling such as CI and CD, Dev Ops, containerisation, etc. is emerging.",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000132",
+          "name": "Maintenance automation tooling such as CI and CD, Dev Ops, containerisation, etc. is defined organisation-wide and adhered to.",
+          "maturityLevel": "Defined"
+        }
+      ]
+    },
+    {
+      "_id": "CMP000024",
+      "name": "Development Process",
+      "definition": "Standards for the complete SLDLC",
+      "criteria": [
+        {
+          "_id": "CRI000133",
+          "name": "Standards for the development process from requirements to implementation are emerging at the individual team level. Functional and non-functional requirements and constraints are documented with some consistency.",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000134",
+          "comment": "originally also included text from CRI000070",
+          "name": "Templates and playbooks exist, cover the vast majority of changes, and are granular at the module level.",
+          "maturityLevel": "Defined"
+        }
+      ]
+    },
+    {
+      "_id": "CMP000025",
+      "name": "Metrics",
+      "definition": "data and metrics are collected to predict change complexity",
+      "criteria": [
+        {
+          "_id": "CRI000135",
+          "name": "Data and metrics to track change lead time against estimated complexity and impact is readily available",
+          "maturityLevel": "Measurable"
+        },
+        {
+          "_id": "CRI000136",
+          "name": "Changes can be made to the system with predictable turnaround, and minimal risk",
+          "maturityLevel": "Measurable"
+        },
+        {
+          "_id": "CRI000137",
+          "name": "Goals are set for maintenance or improvement of change lead time metrics against estimated complexity and impact.",
+          "maturityLevel": "Optimising"
+        }
+      ]
+    },
+    {
+      "_id": "CMP000026",
+      "name": "Access",
+      "definition": "access to maintainable assets is controlled and logged",
+      "criteria": [
+        {
+          "_id": "CRI000138",
+          "name": "PR.MA-1: Maintenance and repair of organizational assets are performed and logged, with approved and controlled tools",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI0000139",
+          "name": "PR.MA-2: Remote maintenance of organizational assets is approved, logged, and performed in a manner that prevents unauthorized access",
+          "maturityLevel": "Developing"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "_id": "QUE000065",
+      "definition": "Do you have any documentation or central knowledge repositories where the system modules details and their inter-relationships are defined? Are these documents regularly kept up to date (for instance, when implementing features or performing an upgrade)?"
+    },
+    {
+      "_id": "QUE000066",
+      "definition": "Who manages the changes to the API specifications (APIs) and their distribution? Who determines which API and standards will be supported? (e.g. OIDC, OAuth2.0)"
+    },
+    {
+      "_id": "QUE000067",
+      "definition": "Does your team maintain and follow standards, guidelines, templates, or playbooks for the development process from requirements to implementation? Are these standards defined group-wide?"
+    },
+    {
+      "_id": "QUE000068",
+      "definition": "Are your functional, non-functional and other requirements stored in a centralised manner?"
+    },
+    {
+      "_id": "QUE000069",
+      "definition": "How granular are the requirement and change specifications? E.g. do they typically get down to the module level?"
+    },
+    {
+      "_id": "QUE000070",
+      "definition": "How coupled are the modules in your space? Who is responsible for the documentation of the impact of change? "
+    },
+    {
+      "_id": "QUE000071",
+      "definition": "Are you using any data or metrics to track lead time, velocity, cycle time, code coverage, code analysis? Any other metrics such as failed deployment, testing results, escaped defects?"
+    }
+  ]
+}

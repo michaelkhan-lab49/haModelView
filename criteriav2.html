@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Health Assessor Model Viewer - Criteria</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="assets/style.css" />
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.21.0/dist/bootstrap-table.min.js"></script>
+    <script src="assets/app.js"></script>
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <div class="container container-fluid">
+      <div class="row">
+        <div class="col-sm-2">
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary btn-sm dropdown-toggle position-relative"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Topics
+            </button>
+            <ul class="dropdown-menu" id="dditems"></ul>
+          </div>
+        </div>
+        <div class="col-sm-10">
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary btn-sm dropdown-toggle position-relative"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Maturity Level
+            </button>
+            <ul class="dropdown-menu" id="dditems">
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="javascript:void(0);"
+                  onclick="applyFilterCriteriaByMaturity(null);">
+                  (All)
+                </a>
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="javascript:void(0);"
+                  onclick="applyFilterCriteriaByMaturity(0);">
+                  Establishing (L0)
+                </a>
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="javascript:void(0);"
+                  onclick="applyFilterCriteriaByMaturity(1);">
+                  Initial (L1)
+                </a>
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="javascript:void(0);"
+                  onclick="applyFilterCriteriaByMaturity(2);">
+                  Developing (L2)
+                </a>
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="javascript:void(0);"
+                  onclick="applyFilterCriteriaByMaturity(3);">
+                  Defined (L3)
+                </a>
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="javascript:void(0);"
+                  onclick="applyFilterCriteriaByMaturity(4);">
+                  Measurable (L4)
+                </a>
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="javascript:void(0);"
+                  onclick="applyFilterCriteriaByMaturity(5);">
+                  Optimising (L5)
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-2 g-3">
+          <button id="selectedtopic" type="button" class="btn btn-light btn-sm">
+            <span />
+          </button>
+        </div>
+        <div class="col-sm-10 g-3">
+          <button
+            id="selectedmaturity"
+            type="button"
+            class="btn btn-light btn-sm">
+            <span />
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      id="modelContainer"
+      class="container container-fluid table-responsive p-2">
+      <table
+        id="dataTable"
+        data-search="true"
+        data-search-highlight="true"
+        data-pagination="true">
+        <thead class="table-light">
+          <tr>
+            <th
+              data-field="_id"
+              data-sortable="true"
+              data-search-highlight-formatter="customSearchFormatter">
+              Id
+            </th>
+            <th
+              data-field="name"
+              data-sortable="true"
+              data-search-highlight-formatter="customSearchFormatter">
+              Name
+            </th>
+            <th
+              data-field="topic"
+              data-sortable="true"
+              data-search-highlight-formatter="customSearchFormatter">
+              Topic
+            </th>
+            <th
+              data-field="component"
+              data-sortable="true"
+              data-search-highlight-formatter="customSearchFormatter">
+              Component
+            </th>
+            <th
+              data-field="maturityLevelText"
+              data-sortable="true"
+              data-search-highlight-formatter="customSearchFormatter"
+              data-cell-style="maturityCellStyle">
+              Maturity Level
+            </th>
+            <!--th data-field="version" data-sortable="true">Version</th-->
+          </tr>
+        </thead>
+      </table>
+    </div>
+
+    <script>
+      $(() => {
+        let topic = localStorage.getItem("topic");
+        let maturityLevel = Number(localStorage.getItem("maturityLevel"));
+
+        if (
+          topic === null ||
+          topic === "null" ||
+          topic === undefined ||
+          topic === "undefined"
+        )
+          topic = "";
+
+        fetchData().then(() => {
+          let html =
+            '<li><a class="dropdown-item" href="javascript:void(0);" onclick="applyFilterCriteriaByTopic(null);">(All)</a></li>';
+
+          for (let i = 0; i < modelv2.topics.length; i++) {
+            const item = modelv2.topics[i].name;
+            const crs = modelv2.topics[i].criterias.length;
+            let active = "";
+            let aria = "";
+            if (item === topic) {
+              active = " active";
+              aria = ' aria-current="true"';
+            }
+
+            html += `<li><a class="dropdown-item${active}"${aria} href="javascript:void(0);" onclick="applyFilterCriteriaByTopic('${item}');">${item} (${crs})</a></li>`;
+          }
+          $("#dditems").html(html);
+
+          let criterias = modelv2.criterias;
+
+          if (topic && topic.length > 0)
+            criterias = criterias.filter((c) => c.topic === topic);
+
+          if (maturityLevel >= 0)
+            criterias = criterias.filter(
+              (c) => c.maturityLevel === maturityLevel
+            );
+
+          //criterias = sortCriterias(criterias);
+          criterias.sort((a, b) => a.sort.localeCompare(b.sort));
+
+          html = `${topic} <span class="badge text-bg-secondary">${criterias.length}</span>`;
+          $("#selectedtopic").html(html);
+
+          if (maturityLevel >= 0) {
+            html = `${maturityText(
+              maturityLevel
+            )} <span class="badge text-bg-secondary">${
+              criterias.length
+            }</span>`;
+            $("#selectedmaturity").html(html);
+          }
+
+          $("#dataTable").bootstrapTable({ data: criterias });
+        });
+      });
+
+      const tooltipTriggerList = document.querySelectorAll(
+        '[data-bs-toggle="tooltip"]'
+      );
+      const tooltipList = [...tooltipTriggerList].map(
+        (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,479 @@
+{
+  "_id": "TOP000002",
+  "name": "Engineering",
+  "description": "The process used by the organisation to deliver software, including the design, development, testing and packaging of the overall solution to deliver software in a repeatable, methodical way to ensure completion within time and cost estimates.",
+  "domain": "Application Review",
+  "area": "Technology",
+  "components": [
+    {
+      "_id": "CMP000008",
+      "name": "Tools",
+      "definition": "The tools used to engineer and build components, modules, services and applications.",
+      "criteria": [
+        {
+          "_id": "CRI000030",
+          "name": "Poor automation of pipelines",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI000031",
+          "name": "Legacy or irrelevant tools",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI000032",
+          "name": "Disintegrated tool chain",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000033",
+          "name": "Ad-hoc tooling",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000034",
+          "name": "Integrated toolchain",
+          "maturityLevel": "Defined"
+        },
+        {
+          "_id": "CRI000035",
+          "name": "Automated CI & CD",
+          "maturityLevel": "Measurable"
+        },
+        {
+          "_id": "CRI000036",
+          "name": "Automated testing and test data management",
+          "maturityLevel": "Optimising"
+        },
+        {
+          "_id": "CRI000037",
+          "name": "Tooling templates",
+          "maturityLevel": "Optimising"
+        }
+      ]
+    },
+    {
+      "_id": "CMP000009",
+      "name": "Delivery Lifecycle Model",
+      "definition": "A consistent organisational SDLC with automation where possible.",
+      "criteria": [
+        {
+          "_id": "CRI000038",
+          "name": "Ad-hoc scaffolding for applications and infrastructure",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI000039",
+          "name": "No package, version management",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI000040",
+          "name": "No infrastructure automation in place",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI000041",
+          "name": "Ad-hoc automation, mainly around builds",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000042",
+          "name": "Build pipelines",
+          "maturityLevel": "Defined"
+        },
+        {
+          "_id": "CRI000043",
+          "name": "Infrastructure provisioning based on templates",
+          "maturityLevel": "Measurable"
+        },
+        {
+          "_id": "CRI000044",
+          "name": "Continuous integration and deployment",
+          "maturityLevel": "Optimising"
+        },
+        {
+          "_id": "CRI000045",
+          "name": "Continuous testing across all environments",
+          "maturityLevel": "Optimising"
+        }
+      ]
+    },
+    {
+      "_id": "CMP000010",
+      "name": "Monitoring",
+      "definition": "",
+      "criteria": [
+        {
+          "_id": "CRI000046",
+          "name": "No real-time telemetry across environments and pipelines",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI000047",
+          "name": "No centralized log management",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI000048",
+          "name": "No gates and checks in place for artifacts",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000049",
+          "name": "Manual issue detection",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000050",
+          "name": "Automated monitoring for key application elements/functions",
+          "maturityLevel": "Defined"
+        },
+        {
+          "_id": "CRI000051",
+          "name": "Centralized logs management",
+          "maturityLevel": "Measurable"
+        },
+        {
+          "_id": "CRI000052",
+          "name": "Real-time telemetry, preventive actions",
+          "maturityLevel": "Optimising"
+        },
+        {
+          "_id": "CRI000053",
+          "name": "Business-function-based monitoring and alters",
+          "maturityLevel": "Optimising"
+        }
+      ]
+    },
+    {
+      "_id": "CMP000011",
+      "name": "Operations",
+      "definition": "",
+      "criteria": [
+        {
+          "_id": "CRI000054",
+          "name": "No automated monitoring",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI000055",
+          "name": "No operational, support knowledge management",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI000056",
+          "name": "Poor operations tooling",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000057",
+          "name": "Products operated by delivery team",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000058",
+          "name": "Early operationalization of increments",
+          "maturityLevel": "Defined"
+        },
+        {
+          "_id": "CRI000059",
+          "name": "Standards for operational artifacts, knowledge management",
+          "maturityLevel": "Measurable"
+        },
+        {
+          "_id": "CRI000060",
+          "name": "Product metrics collected continuously ",
+          "maturityLevel": "Optimising"
+        },
+        {
+          "_id": "CRI000061",
+          "name": "Automatic operationalization",
+          "maturityLevel": "Optimising"
+        }
+      ]
+    },
+    {
+      "_id": "CMP000012",
+      "name": "Requirements Management",
+      "definition": "How are business requirements captured, specified and delivered? How is there traceability of requirement delivery.",
+      "criteria": [
+        {
+          "_id": "CRI000062",
+          "name": "Requirements aren’t tested",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI000063",
+          "name": "Requirements poorly documented",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI000064",
+          "name": "Requirements management not driven by product priorities",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000065",
+          "name": "Ad-hoc requirements management",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000066",
+          "name": "”Requirements to requirements” established",
+          "maturityLevel": "Defined"
+        },
+        {
+          "_id": "CRI000067",
+          "name": "Requirements driven by product priorities",
+          "maturityLevel": "Measurable"
+        },
+        {
+          "_id": "CRI000068",
+          "name": "Product utilization metrics drive priorities",
+          "maturityLevel": "Optimising"
+        },
+        {
+          "_id": "CRI000069",
+          "name": "Requirements as code",
+          "maturityLevel": "Optimising"
+        }
+      ]
+    },
+    {
+      "_id": "CMP000013",
+      "name": "Software coding practices",
+      "definition": "",
+      "criteria": [
+        {
+          "_id": "CRI000070",
+          "name": "No code reuse practices",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI000071",
+          "name": "No code quality practices",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI000072",
+          "name": "Code-first engineering approach",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000073",
+          "name": "No code requirements",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000074",
+          "name": "Basic linting requirements established",
+          "maturityLevel": "Defined"
+        },
+        {
+          "_id": "CRI000075",
+          "name": "Branching, merging, review policies in place",
+          "maturityLevel": "Measurable"
+        },
+        {
+          "_id": "CRI000076",
+          "name": "Design-first requirements-based approach",
+          "maturityLevel": "Optimising"
+        },
+        {
+          "_id": "CRI000077",
+          "name": "Code reuse, componentization policies in place",
+          "maturityLevel": "Optimising"
+        }
+      ]
+    },
+    {
+      "_id": "CMP000014",
+      "name": "Software Architecture and Design",
+      "definition": "Software design and architecture consistently applied for the platform.",
+      "criteria": [
+        {
+          "_id": "CRI000078",
+          "name": "Architecture, design not align to organization strategy",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI000078",
+          "name": "Design decisions made ad-hoc",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI000079",
+          "name": "Undocumented architecture",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000080",
+          "name": "No architecture consistency across products",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000081",
+          "name": "Architecture and design process and standards",
+          "maturityLevel": "Defined"
+        },
+        {
+          "_id": "CRI000082",
+          "name": "Major patterns documented and reused across projects",
+          "maturityLevel": "Measurable"
+        },
+        {
+          "_id": "CRI000083",
+          "name": "Standard design expression notation, templates",
+          "maturityLevel": "Optimising"
+        },
+        {
+          "_id": "CRI000084",
+          "name": "Enterprise architecture and design standards",
+          "maturityLevel": "Optimising"
+        }
+      ]
+    },
+    {
+      "_id": "CMP000015",
+      "name": "Software Quality",
+      "definition": "Standards and certification for software quality.",
+      "criteria": [
+        {
+          "_id": "CRI000085",
+          "name": "Poor test coverage",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI000086",
+          "name": "Poor SQALE outcomes",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI000087",
+          "name": "Ad-hoc quality and design control",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000088",
+          "name": "Loosely defined architecture",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000089",
+          "name": "Defined architecture and design",
+          "maturityLevel": "Defined"
+        },
+        {
+          "_id": "CRI000090",
+          "name": "Automated quality control",
+          "maturityLevel": "Optimising"
+        },
+        {
+          "_id": "CRI000091",
+          "name": "Reuse of assets",
+          "maturityLevel": "Measurable"
+        },
+        {
+          "_id": "CRI000092",
+          "name": "Low/no-code environments, component templates",
+          "maturityLevel": "Measurable"
+        }
+      ]
+    },
+    {
+      "_id": "CMP000016",
+      "name": "Infrastructure",
+      "definition": "The infrastructure required to deliver the engineering products and services.",
+      "criteria": [
+        {
+          "_id": "CRI000093",
+          "name": "Technical solutions constrained by infra limitations",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI000094",
+          "name": "Dev and production profiles are different",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI000095",
+          "name": "Lengthy infra provisioning process",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000096",
+          "name": "Legacy infrastructure",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000097",
+          "name": "Modern, relevant infrastructure driven by technology vision",
+          "maturityLevel": "Defined"
+        },
+        {
+          "_id": "CRI000098",
+          "name": "Dev infra mimics production",
+          "maturityLevel": "Measurable"
+        },
+        {
+          "_id": "CRI000099",
+          "name": "Automated infra monitoring",
+          "maturityLevel": "Optimising"
+        },
+        {
+          "_id": "CRI000100",
+          "name": "Self-service, template-driven infrastructure management",
+          "maturityLevel": "Optimising"
+        }
+      ]
+    },
+    {
+      "_id": "CMP000017",
+      "name": "Software Reliability and Quality",
+      "definition": "How is software reliability designed, implemented and measured?",
+      "criteria": [
+        {
+          "_id": "CRI000101",
+          "name": "Quality metrics are not sampled",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI000102",
+          "name": "Testing not driven by requirements",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI000103",
+          "name": "Testing not automated",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000104",
+          "name": "Manual ad-hoc testing",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000105",
+          "name": "Quality framework established, covers all artifacts/processes",
+          "maturityLevel": "Defined"
+        },
+        {
+          "_id": "CRI000106",
+          "name": "Quality framework aims automation",
+          "maturityLevel": "Measurable"
+        },
+        {
+          "_id": "CRI000107",
+          "name": "TDD/BDD practices",
+          "maturityLevel": "Optimising"
+        },
+        {
+          "_id": "CRI000108",
+          "name": "End-to-end quality automation (code, infra, functional)",
+          "maturityLevel": "Optimising"
+        }
+      ]
+    }
+  ]
+}

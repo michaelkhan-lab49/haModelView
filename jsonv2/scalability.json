@@ -1,0 +1,214 @@
+{
+  "_id": "TOP000006",
+  "name": "Scalability",
+  "description": "The ability of a system to accommodate an increasing number of elements, process growing volumes of work gracefully and where capacity can be expanded.",
+  "domain": "Application review",
+  "area": "Technology",
+  "components": [
+    {
+      "_id": "CMP000034",
+      "name": "Infrastructure",
+      "definition": "The infrastructure has scaling criteria. How this is managed will depend on a level of maturity.",
+      "criteria": [
+        {
+          "_id": "CRI000168",
+          "name": "Applications or infrastructure are scaled manually and success depends upon the skills of key people.",
+          "maturityLevel": "Initial"
+        }
+      ]
+    },
+    {
+      "_id": "CMP000035",
+      "name": "Requirements gathering",
+      "definition": "",
+      "criteria": [
+        {
+          "_id": "CRI000169",
+          "name": "Success of scalability requirement gathering, designing, development, and acquisition depends entirely upon the skills of a small number of individuals.",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI000170",
+          "name": "Initial attempts by individual teams to gather scalability requirements in a consistent way.  Categories of scalability requirements and metrics start being adopted - e.g. transaction growth rates (with proxies used where appropriate such as GDP or population growth), time required to scale application or infrastructure by certain percentage points, etc.",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000171",
+          "name": "Consistent group-wide processes for gathering scalability requirements are adopted.  Categories of scalability requirements and metrics start being adopted - e.g. transaction growth rates (with proxies used where appropriate such as GDP or population growth), time required to scale application or infrastructure by certain percentage points, etc.",
+          "maturityLevel": "Defined"
+        }
+      ]
+    },
+    {
+      "_id": "CMP000036",
+      "name": "Tools",
+      "definition": "",
+      "criteria": [
+        {
+          "_id": "CRI0000172",
+          "name": "Some basic tools are adopted by individuals - e.g. Excel for KPI tracking, etc.",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI0000173",
+          "name": "Initial attempts to adopt tools to design, implement, and monitor scalability are adopted.  Examples include test environments, test tools, containerisation frameworks, vendor scalability tools, and monitoring tools.",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI0000174",
+          "name": "Standard tools to design, implement, and monitor scalability are adopted. Examples include test environments, test tools, containerisation frameworks, vendor scalability tools, and monitoring tools.",
+          "maturityLevel": "Defined"
+        }
+      ]
+    },
+    {
+      "_id": "CMP000037",
+      "name": "Roles",
+      "definition": "",
+      "criteria": [
+        {
+          "_id": "CRI0000175",
+          "name": "Some roles may be defined by individual contributors.",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI0000176",
+          "name": "Individual teams are defining roles with respect to scalability requirements, design, development, deployment, and operations.",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI0000177",
+          "name": "Roles are defined with respect to scalability requirements, design, development, deployment, and operations.",
+          "maturityLevel": "Defined",
+          "versions": [
+            {
+              "status": "PUBLISHED"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_id": "CMP000038",
+      "name": "Design Goals",
+      "definition": "",
+      "criteria": [
+        {
+          "_id": "CRI0000178",
+          "name": "Initial attempts made to establish design goals and principles for scaling by individual teams.",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI0000179",
+          "name": "Scalability design goals and principles are adopted group-wide and followed.",
+          "maturityLevel": "Defined"
+        }
+      ]
+    },
+    {
+      "_id": "CMP000039",
+      "name": "Testing",
+      "definition": "",
+      "criteria": [
+        {
+          "_id": "CRI0000180",
+          "name": "Initial attempts at performing scalability testing as part of the release - for example, CI and CD pipeline for custom software.",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI0000181",
+          "name": "Scalability testing is performed in a consistent way throughout the group.",
+          "maturityLevel": "Defined"
+        }
+      ]
+    },
+    {
+      "_id": "CMP000040",
+      "name": "Operational Processes",
+      "definition": "",
+      "criteria": [
+        {
+          "_id": "CRI0000182",
+          "name": "Standards for consistent operational processes with respect to scalability are emerging.  These may include monitoring of auto-scaling decisions, etc.",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI0000183",
+          "name": "Consistent operational processes with respect to scalability are followed. These may include monitoring of auto-scaling decisions, etc.",
+          "maturityLevel": "Defined"
+        }
+      ]
+    },
+    {
+      "_id": "CMP000041",
+      "name": "Metrics",
+      "definition": "",
+      "criteria": [
+        {
+          "_id": "CRI0000184",
+          "name": "Some scalability metrics are collected by individual contributors at their own initiative.",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI0000185",
+          "name": "Some metrics may be defined by individual teams, but are not consistently collected.",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI0000186",
+          "name": "Some metrics may be defined, but are not consistently collected.",
+          "maturityLevel": "Defined"
+        },
+        {
+          "_id": "CRI0000187",
+          "name": "Scalability metrics are collected and reported on regularly. Examples may include cost of scaling up or down, time to scale by certain percentage points, etc.",
+          "maturityLevel": "Measurable"
+        },
+        {
+          "_id": "CRI0000188",
+          "name": "Scalability metrics are fed back into the SDLC or vendor processes to improve availability.",
+          "maturityLevel": "Optimising"
+        },
+        {
+          "_id": "CRI0000189",
+          "name": "Scalability metrics are defined and collected consistently and improvement goals are set.",
+          "maturityLevel": "Optimising"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "_id": "QUE000048",
+      "definition": "What are your primary objectives, guidelines and goals in regard to scalability? Are they aligned with the rest of the organisation (e.g ARC Tiers)?"
+    },
+    {
+      "_id": "QUE000049",
+      "definition": "How is the application/service architected to enable scalability? \na.\tDo you directly control your supporting infrastructure (hardware, servers, networking equipment)? Who supports it? Who provisions it?"
+    },
+    {
+      "_id": "QUE000050",
+      "definition": "Do you have any roles formally defined in your team to consider scalability requirements? Roles could be assigned to document, design, test and/or measure scalability over time"
+    },
+    {
+      "_id": "QUE000051",
+      "definition": "How are you testing scalability in SS, SSB, HSM and Cassandra? Does this testing include upstream and/or downstream systems or is it run in isolation?\na.\tNote: this is distinct from performance testing. That is – how do you test your system's ability to respond to and cope with changes in demand. Both short-term (I.e. sudden spikes) and longer-term trends."
+    },
+    {
+      "_id": "QUE000052",
+      "definition": "Are there any scalability features (e.g auto-scaling) across components that you can apply?"
+    },
+    {
+      "_id": "QUE000053",
+      "definition": "Are you utilising any tools, frameworks and libraries specifically for responding to scalability events (e.g. thresholds crossed)? (covering design, test and execution)"
+    },
+    {
+      "_id": "QUE000054",
+      "definition": "Do you have any metrics and reports collected in relation to scalability and capacity?"
+    },
+    {
+      "_id": "QUE000055",
+      "definition": "Are there any improvement goals defined around scalability, with respect to the above metrics?"
+    }
+  ]
+}

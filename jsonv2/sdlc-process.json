@@ -1,0 +1,230 @@
+{
+  "_id": "TOP000015",
+  "name": "SDLC Process",
+  "description": "The process used by the organisation to deliver software, including the design, development, testing and packaging of the overall solution to deliver software in a repeatable, methodical way to ensure completion within time and cost estimates.",
+  "domain": "Application Review",
+  "area": "Technology",
+
+  "components": [
+    {
+      "_id": "CMP000042",
+      "name": "Process Definition",
+      "definition": "how the SDLC process is defined, audited and improved",
+      "criteria": [
+        {
+          "_id": "CMP0000190",
+          "name": "Some processes are defined and followed by individuals (possibly using standards such as Scrum, SAFe, PRINCE2, PMBOK, etc.)",
+          "definition": "Some processes are defined and followed by individuals (possibly using standards such as Scrum, SAFe, PRINCE2, PMBOK, etc.)",
+          "maturityLevel": "Initial",
+          "source": ""
+        },
+        {
+          "_id": "CRI0000191",
+          "name": "Processes are defined within individual teams with minimal process discipline in place.",
+          "definition": "Processes are defined within individual teams with minimal process discipline in place.",
+          "maturityLevel": "Developing",
+          "source": ""
+        },
+        {
+          "_id": "CRI0000192",
+          "name": "Processes are defined and followed group-wide in a repeatable manner.",
+          "definition": "Processes are defined and followed group-wide in a repeatable manner.",
+          "maturityLevel": "Defined",
+          "source": ""
+        },
+        {
+          "_id": "CRI0000194",
+          "name": "Regular process audits are performed.",
+          "definition": "Regular process audits are performed.",
+          "maturityLevel": "Measurable",
+          "source": ""
+        },
+        {
+          "_id": "CRI0000195",
+          "name": "Regular process audits are performed and quantifiable process improvement goals are set.",
+          "definition": "Regular process audits are performed and quantifiable process improvement goals are set.",
+          "maturityLevel": "Optimising",
+          "source": ""
+        }
+      ]
+    },
+    {
+      "_id": "CMP000043",
+      "name": "Process Execution",
+      "definition": "",
+      "criteria": [
+        {
+          "_id": "CRI0000196",
+          "name": "No sampling of process metrics",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI0000197",
+          "name": "No standards to artifacts",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI0000197",
+          "name": "Ad-hoc communications",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI0000198",
+          "name": "Ad-hoc process",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI0000199",
+          "name": "Clear definition of process",
+          "maturityLevel": "Defined"
+        },
+        {
+          "_id": "CRI0000200",
+          "name": "Managed communications",
+          "maturityLevel": "Measurable"
+        },
+        {
+          "_id": "CRI0000201",
+          "name": "Standards to artifacts",
+          "maturityLevel": "Optimising"
+        },
+        {
+          "_id": "CRI0000202",
+          "name": "KPIs, Continuous improvement",
+          "maturityLevel": "Optimising"
+        }
+      ]
+    },
+    {
+      "_id": "CMP000044",
+      "name": "Roles",
+      "definition": "how team roles are defined",
+      "criteria": [
+        {
+          "_id": "CRI0000203",
+          "name": "Some roles are defined. Engagement from business or IT depends on the heroic efforts of individuals.",
+          "definition": "Some roles are defined. Engagement from business or IT depends on the heroic efforts of individuals.",
+          "maturityLevel": "Initial",
+          "source": ""
+        },
+        {
+          "_id": "CRI0000204",
+          "name": "Roles are defined within individual teams. Key members of the team are trained in understanding the roles.",
+          "definition": "Roles are defined within individual teams. Key members of the team are trained in understanding the roles.",
+          "maturityLevel": "Developing",
+          "source": ""
+        },
+        {
+          "_id": "CRI0000205",
+          "name": "Roles are defined and followed group-wide in a consistent manner (e.g. Product Owner, Scrum Master, etc. if using Scrum).",
+          "definition": "Roles are defined and followed group-wide in a consistent manner (e.g. Product Owner, Scrum Master, etc. if using Scrum).",
+          "maturityLevel": "Developing",
+          "source": ""
+        }
+      ]
+    },
+    {
+      "_id": "CMP000045",
+      "name": "Tools",
+      "definition": "what tools are used that help automate the SDLC",
+      "criteria": [
+        {
+          "_id": "CRI0000206",
+          "name": "Some tools are used by individuals (e.g. simple spreadsheets, Jira, Microsoft Planner, GitHub Project, etc.), but may not be widely adopted by teams.",
+          "definition": "Some tools are used by individuals (e.g. simple spreadsheets, Jira, Microsoft Planner, GitHub Project, etc.), but may not be widely adopted by teams.",
+          "maturityLevel": "Initial",
+          "source": ""
+        },
+        {
+          "_id": "CRI0000207",
+          "name": "Common tools are adopted and used consistently within individual teams in a repeatable manner.",
+          "definition": "Common tools are adopted and used consistently within individual teams in a repeatable manner.",
+          "maturityLevel": "Developing",
+          "source": ""
+        },
+        {
+          "_id": "CRI0000208",
+          "name": "Common tools are adopted and used consistently group-wide.  Tools facilitate automation of the SDLC.",
+          "definition": "Common tools are adopted and used consistently group-wide.  Tools facilitate automation of the SDLC.",
+          "maturityLevel": "Defined",
+          "source": ""
+        }
+      ]
+    },
+    {
+      "_id": "CMP000046",
+      "name": "Data",
+      "definition": "how data is collected about the effectiveness of the development process",
+      "criteria": [
+        {
+          "_id": "CRI0000209",
+          "name": "Some data is collected (such as velocity, lead time for change, etc.) but collection may be ad-hoc and driven by individuals' desire to improve the process.",
+          "definition": "Some data is collected (such as velocity, lead time for change, etc.) but collection may be ad-hoc and driven by individuals' desire to improve the process.",
+          "maturityLevel": "Initial",
+          "source": ""
+        },
+        {
+          "_id": "CRI0000210",
+          "name": "Data is collected within individual teams with some consistency.",
+          "definition": "Data is collected within individual teams with some consistency.",
+          "maturityLevel": "Developing",
+          "source": ""
+        },
+        {
+          "_id": "CRI0000211",
+          "name": "Standards for SDLC data collections exist group-wide and are followed in a repeatable and comparable manner.",
+          "definition": "Standards for SDLC data collections exist group-wide and are followed in a repeatable and comparable manner.",
+          "maturityLevel": "Defined",
+          "source": ""
+        },
+        {
+          "_id": "CRI0000212",
+          "name": "Metrics are surfaced at group level.",
+          "definition": "Metrics are surfaced at group level.",
+          "maturityLevel": "Measurable",
+          "source": ""
+        },
+        {
+          "_id": "CRI0000213",
+          "name": "KPIs and improvement goals are set.",
+          "definition": "KPIs and improvement goals are set.",
+          "maturityLevel": "Optimising",
+          "source": ""
+        }
+      ]
+    }
+  ],
+
+  "questions": [
+    {
+      "definition": "What are the primary type of assets developed on the team?\na.\tThat is - code and software development assets that are authored on your team. This includes management, scripting and deployment infrastructure.\nb.\tPlease call out any major systems & Components (e.g. SSB, SS)"
+    },
+    {
+      "definition": "Tooling (in all cases - please provide links or entry points)\na.\tHow do you manage your team's work-in-progress and track progress?\nb.\tSource control?\nc.\tBuild tools and a CI/CD pipeline?\nd.\tDeployment?\ne.\tKnowledge management? (e.g. Confluence)"
+    },
+    {
+      "definition": "Do you have onboarding and developer guides? (If so - please provide links)"
+    },
+    {
+      "definition": "What are the different roles defined in the team (project manager, product owner, developer, Ops, etc.)?\na.\tDo you have a project charter?\nb.\tIf there are multiple companies involved, what is the split of responsibilities?"
+    },
+    {
+      "definition": "Are they any coding standards, best practices or processes adhered to by the team?"
+    },
+    {
+      "definition": "Do you perform any automated testing?"
+    },
+    {
+      "definition": "How representative is your test environment of production, with respect to:\na.\tCapacity\nb.\tInterfacing systems\nc.\tAlerting"
+    },
+    {
+      "definition": "What are the metrics and statistics gathered helping the SDLC processes? (e.g. defect rates, velocity, test coverage, code quality)"
+    },
+    {
+      "definition": "Are there any KPIs tracked regularly around process improvement?"
+    },
+    {
+      "definition": "Is your adherence to a standard SDLC regularly audited?\na.\tAre there any historic audit reports available for review?"
+    }
+  ]
+}

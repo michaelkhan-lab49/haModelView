@@ -1,0 +1,258 @@
+{
+  "_id": "TOP000001",
+  "name": "Availability",
+  "description": "The expected reliability of a computer system including software, hardware and networks",
+  "domain": "Application Review",
+  "area": "Technology",
+  "components": [
+    {
+      "_id": "CMP000001",
+      "name": "design principles",
+      "definition": "That engineering is effectively implementing designs and these are used consistently across delivery.",
+      "comments": "only 1 criteria is in the tool and no questions",
+      "criteria": [
+        {
+          "_id": "CRI000001",
+          "name": "Some design principles are followed by individuals.",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI000002",
+          "name": "Attempts to establish design principles initially at individual team level.",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000003",
+          "name": "Group-wide architecture and design principles are established and followed in predictable manner.",
+          "maturityLevel": "Defined"
+        }
+      ]
+    },
+    {
+      "_id": "CMP000002",
+      "name": "availability testing",
+      "definition": "proves that the platform is resilient to component failures thereby maximising availability",
+      "criteria": [
+        {
+          "_id": "CRI000004",
+          "name": "Some adhoc availability testing is done but depends on individual effort.",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI000005",
+          "name": "Initial attempts to establish repeatable testing processes for availability. Representative test environments may be used for availability testing.",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000006",
+          "name": "Group-wide availability testing processes are established and followed. Representative test environments are used consistently for availability testing.",
+          "maturityLevel": "Defined"
+        }
+      ]
+    },
+    {
+      "_id": "CMP000003",
+      "name": "availability testing and monitoring tools",
+      "comment": "no questions for this, replicates to some extent what is in the monitoring topic",
+      "definition": "",
+      "criteria": [
+        {
+          "_id": "CRI000007",
+          "name": "Basic or bespoke tools are used for availability testing and monitoring.",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI000008",
+          "name": "Initial implementation of availability testing and monitoring tools across the team. Tools may include blue-green deployment support in deployment pipelines, \"chaos engineering\" utilities, network, host, and application monitoring.",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000009",
+          "name": "Group-wide standards are set for availability testing and monitoring tools. Tools are used in highly predictive manner.",
+          "maturityLevel": "Defined"
+        },
+        {
+          "_id": "CRI000010",
+          "name": "Group-wide standards are set for availability testing and monitoring tools. Tools are used in highly predictive manner that adds value across teams and business units. Tools may include blue-green deployment support in deployment pipelines, \"chaos engineering\" utilities, network, host, and application monitoring.",
+          "maturityLevel": "Defined"
+        }
+      ]
+    },
+    {
+      "_id": "CMP000004",
+      "name": "requirements",
+      "definition": "expectations of system availability are clearly established and documented",
+      "criteria": [
+        {
+          "_id": "CRI000011",
+          "name": "Availability requirements are collected in adhoc manner and are not quantified.",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI000012",
+          "name": "Initial attempts to establish requirements process for availability. It includes specification of some availability goals by business stakeholders. SLAs and SLOs are starting to be established.",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000013",
+          "name": "Group-wide requirements process for availability is established and followed. It includes specification of quantifiable availability goals by business stakeholders. SLAs and SLOs are established.",
+          "maturityLevel": "Defined"
+        }
+      ]
+    },
+    {
+      "_id": "CMP000005",
+      "name": "operational standards",
+      "comment": "no questions about this",
+      "definition": "",
+      "criteria": [
+        {
+          "_id": "CRI000014",
+          "name": "Operational standards are being established with respect to availability, including documentation and training, to support high availability at network, host, and application levels.",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000015",
+          "name": "Group-wide operational standards are established, including documentation and training, to support high availability at network, host, and application levels.",
+          "maturityLevel": "Defined"
+        }
+      ]
+    },
+    {
+      "_id": "CMP000006",
+      "name": "availability monitoring",
+      "definition": "The health of all components in the platform needs to be continuously monitored to know if the required availability level from the perspective of customers is being achieved",
+      "criteria": [
+        {
+          "_id": "CRI000016",
+          "name": "Some adhoc availability monitoring is performed but not yet systematic and consistent.",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI000017",
+          "name": "Some availability-related data is collected, but it is not done in consistent manner.",
+          "comment": "duplicate of CRI000005",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI000018",
+          "name": "Reactive availability monitoring in place - customers/end-users/interfacing systems notify service owners of availability issue",
+          "maturityLevel": "Initial"
+        },
+        {
+          "_id": "CRI000019",
+          "name": "Initial attempt to define availability metrics to capture during deployment and operation.",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000020",
+          "name": "Initial attempt to define availability metrics to capture during deployment and operation.",
+          "comment": "duplicate of CRI000008",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000021",
+          "name": "availability data is collected consistent with group standards and is available in group monitoring tools",
+          "maturityLevel": "Defined"
+        },
+        {
+          "_id": "CRI000022",
+          "name": "Availability metrics are compared with SLAs and SLOs.",
+          "maturityLevel": "Measurable"
+        },
+        {
+          "_id": "CRI000023",
+          "name": "Availability metrics such as Mean Time to Failure (MTTF) and Mean Time to Recovery (MTTR) are collected consistently. Metrics along the path between systems are collected consistently.",
+          "maturityLevel": "Measurable"
+        },
+        {
+          "_id": "CRI000024",
+          "name": "Availability metrics are fed back into the SDLC or vendor processes to improve availability.",
+          "maturityLevel": "Optimising"
+        },
+        {
+          "_id": "CRI000025",
+          "name": "Availability metrics are collected consistently and improvement goals are set with relation to SLA and SLOs.",
+          "maturityLevel": "Optimising"
+        }
+      ]
+    },
+    {
+      "_id": "CMP000007",
+      "name": "highly available by design",
+      "definition": "is the platform designed in such a way that failures of individual components does not make the entire platform unavailable, and upgrades do not require the platform to be made unavailable",
+      "criteria": [
+        {
+          "_id": "CRI000026",
+          "name": "when issues are detected in a component the platform can be switched to use other redundant instances",
+          "maturityLevel": "Developing"
+        },
+        {
+          "_id": "CRI000027",
+          "name": "PR.PT-5: Mechanisms (e.g., failsafe, load balancing, hot swap) are implemented to achieve resilience requirements in normal and adverse situations",
+          "maturityLevel": "Defined"
+        },
+        {
+          "_id": "CRI000028",
+          "name": "application/platform is composed of self healing components: if an instance of a component is detected as unhealthy it is automatically replaced by a new instance with no impact on users",
+          "maturityLevel": "Defined"
+        },
+        {
+          "_id": "CRI000029",
+          "name": "upgrades to components is done in way that has no affect on availability: a subset of users are automatically moved to upgraded components and if anomolies are detected the upgrade is automatically rolled back",
+          "maturityLevel": "Defined"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "_id": "QUE000001",
+      "definition": "How does your team and system define “availability”?"
+    },
+    {
+      "_id": "QUE000002",
+      "definition": "Are you tracking any availability metrics and data?"
+    },
+    {
+      "_id": "QUE000003",
+      "definition": "Are you using any tools or processes to test and monitor availability? Are these integrated with group-wide tooling and metrics? \na.\tIntegration with third-parties — e.g., Verizon\nb.\tCloud and On-Premise."
+    },
+    {
+      "_id": "QUE000004",
+      "definition": "Do you have any availability goals derived from business SLAs/SLOs?"
+    },
+    {
+      "_id": "QUE000005",
+      "definition": "What are your SLAs and SLOs with respect to Availability?"
+    },
+    {
+      "_id": "QUE000006",
+      "definition": "What testing processes and environments do you have in place? Do your test environments topologically mirror production?"
+    },
+    {
+      "_id": "QUE000007",
+      "definition": "Do you regularly test different failure modes with controlled experiments?"
+    },
+    {
+      "_id": "QUE000008",
+      "definition": "What is your system’s ARC Tier, and how do you measure adherence to its requirements?"
+    },
+    {
+      "_id": "QUE000009",
+      "definition": "How does your team come to learn of availability issues?"
+    },
+    {
+      "_id": "QUE000010",
+      "definition": "What tools do you use to investigate availability issues?"
+    },
+    {
+      "_id": "QUE000011",
+      "definition": "What other systems (infrastructure, upstream, downstream or otherwise) affect your system’s availability? (e.g. DNS, networks)"
+    },
+    {
+      "_id": "QUE000012",
+      "definition": "Is the system architecture fully resilient, with redundancy and/or replication and failover at all necessary components (LB, Applications, DB, HSM)"
+    }
+  ]
+}
