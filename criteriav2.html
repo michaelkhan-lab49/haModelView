@@ -5,16 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Health Assessor Model Viewer - Criteria</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
 
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/bootstrap-table@1.21.0/dist/bootstrap-table.min.js"></script>
-    <script src="assets/app.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/appv2.js"></script>
+    <script src="assets/js/criteriav2.js"></script>
   </head>
   <body>
-    <div id="navbar"></div>
+    <div id="navbar">
+      <nav class="navbar navbar-expand-lg bg-light sticky-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html"
+            >Health Assessor Model Viewer</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav nav-pills">
+              <li class="nav-item">
+                <a id="nav-1" class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a id="nav-2" class="nav-link" href="areas.html">Areas</a>
+              </li>
+              <li class="nav-item">
+                <a id="nav-3" class="nav-link" href="topics.html">Topics</a>
+              </li>
+              <li class="nav-item">
+                <a id="nav-4" class="nav-link" href="criteria.html">Criteria</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">|</a>
+              </li>
+              <li class="nav-item">
+                <a id="nav-5" class="nav-link disabled" href="areas.html"
+                  >Areas v2</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  id="nav-6"
+                  class="nav-link"
+                  href="topicsv2.html"
+                  data-bs-toggle="tooltip"
+                  data-bs-title="Version with Components"
+                >
+                  Topics v2
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  id="nav-7"
+                  class="nav-link"
+                  href="criteriav2.html"
+                  data-bs-toggle="tooltip"
+                  data-bs-title="Version with Components"
+                >
+                  Criteria v2
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
 
     <div class="container container-fluid">
       <div class="row">
@@ -24,7 +91,8 @@
               class="btn btn-secondary btn-sm dropdown-toggle position-relative"
               type="button"
               data-bs-toggle="dropdown"
-              aria-expanded="false">
+              aria-expanded="false"
+            >
               Topics
             </button>
             <ul class="dropdown-menu" id="dditems"></ul>
@@ -36,7 +104,8 @@
               class="btn btn-secondary btn-sm dropdown-toggle position-relative"
               type="button"
               data-bs-toggle="dropdown"
-              aria-expanded="false">
+              aria-expanded="false"
+            >
               Maturity Level
             </button>
             <ul class="dropdown-menu" id="dditems">
@@ -44,7 +113,8 @@
                 <a
                   class="dropdown-item"
                   href="javascript:void(0);"
-                  onclick="applyFilterCriteriaByMaturity(null);">
+                  onclick="applyFilterCriteriaByMaturity(null);"
+                >
                   (All)
                 </a>
               </li>
@@ -52,7 +122,8 @@
                 <a
                   class="dropdown-item"
                   href="javascript:void(0);"
-                  onclick="applyFilterCriteriaByMaturity(0);">
+                  onclick="applyFilterCriteriaByMaturity(0);"
+                >
                   Establishing (L0)
                 </a>
               </li>
@@ -60,7 +131,8 @@
                 <a
                   class="dropdown-item"
                   href="javascript:void(0);"
-                  onclick="applyFilterCriteriaByMaturity(1);">
+                  onclick="applyFilterCriteriaByMaturity(1);"
+                >
                   Initial (L1)
                 </a>
               </li>
@@ -68,7 +140,8 @@
                 <a
                   class="dropdown-item"
                   href="javascript:void(0);"
-                  onclick="applyFilterCriteriaByMaturity(2);">
+                  onclick="applyFilterCriteriaByMaturity(2);"
+                >
                   Developing (L2)
                 </a>
               </li>
@@ -76,7 +149,8 @@
                 <a
                   class="dropdown-item"
                   href="javascript:void(0);"
-                  onclick="applyFilterCriteriaByMaturity(3);">
+                  onclick="applyFilterCriteriaByMaturity(3);"
+                >
                   Defined (L3)
                 </a>
               </li>
@@ -84,7 +158,8 @@
                 <a
                   class="dropdown-item"
                   href="javascript:void(0);"
-                  onclick="applyFilterCriteriaByMaturity(4);">
+                  onclick="applyFilterCriteriaByMaturity(4);"
+                >
                   Measurable (L4)
                 </a>
               </li>
@@ -92,7 +167,8 @@
                 <a
                   class="dropdown-item"
                   href="javascript:void(0);"
-                  onclick="applyFilterCriteriaByMaturity(5);">
+                  onclick="applyFilterCriteriaByMaturity(5);"
+                >
                   Optimising (L5)
                 </a>
               </li>
@@ -111,7 +187,8 @@
           <button
             id="selectedmaturity"
             type="button"
-            class="btn btn-light btn-sm">
+            class="btn btn-light btn-sm"
+          >
             <span />
           </button>
         </div>
@@ -119,43 +196,50 @@
     </div>
     <div
       id="modelContainer"
-      class="container container-fluid table-responsive p-2">
+      class="container container-fluid table-responsive p-2"
+    >
       <table
         id="dataTable"
         data-search="true"
         data-search-highlight="true"
-        data-pagination="true">
+        data-pagination="true"
+      >
         <thead class="table-light">
           <tr>
             <th
               data-field="_id"
               data-sortable="true"
-              data-search-highlight-formatter="customSearchFormatter">
+              data-search-highlight-formatter="customSearchFormatter"
+            >
               Id
             </th>
             <th
               data-field="name"
               data-sortable="true"
-              data-search-highlight-formatter="customSearchFormatter">
+              data-search-highlight-formatter="customSearchFormatter"
+            >
               Name
             </th>
             <th
               data-field="topic"
               data-sortable="true"
-              data-search-highlight-formatter="customSearchFormatter">
+              data-search-highlight-formatter="customSearchFormatter"
+            >
               Topic
             </th>
             <th
               data-field="component"
               data-sortable="true"
-              data-search-highlight-formatter="customSearchFormatter">
+              data-search-highlight-formatter="customSearchFormatter"
+            >
               Component
             </th>
             <th
               data-field="maturityLevelText"
               data-sortable="true"
               data-search-highlight-formatter="customSearchFormatter"
-              data-cell-style="maturityCellStyle">
+              data-cell-style="maturityCellStyle"
+            >
               Maturity Level
             </th>
             <!--th data-field="version" data-sortable="true">Version</th-->
@@ -163,73 +247,5 @@
         </thead>
       </table>
     </div>
-
-    <script>
-      $(() => {
-        let topic = localStorage.getItem("topic");
-        let maturityLevel = Number(localStorage.getItem("maturityLevel"));
-
-        if (
-          topic === null ||
-          topic === "null" ||
-          topic === undefined ||
-          topic === "undefined"
-        )
-          topic = "";
-
-        fetchData().then(() => {
-          let html =
-            '<li><a class="dropdown-item" href="javascript:void(0);" onclick="applyFilterCriteriaByTopic(null);">(All)</a></li>';
-
-          for (let i = 0; i < modelv2.topics.length; i++) {
-            const item = modelv2.topics[i].name;
-            const crs = modelv2.topics[i].criterias.length;
-            let active = "";
-            let aria = "";
-            if (item === topic) {
-              active = " active";
-              aria = ' aria-current="true"';
-            }
-
-            html += `<li><a class="dropdown-item${active}"${aria} href="javascript:void(0);" onclick="applyFilterCriteriaByTopic('${item}');">${item} (${crs})</a></li>`;
-          }
-          $("#dditems").html(html);
-
-          let criterias = modelv2.criterias;
-
-          if (topic && topic.length > 0)
-            criterias = criterias.filter((c) => c.topic === topic);
-
-          if (maturityLevel >= 0)
-            criterias = criterias.filter(
-              (c) => c.maturityLevel === maturityLevel
-            );
-
-          //criterias = sortCriterias(criterias);
-          criterias.sort((a, b) => a.sort.localeCompare(b.sort));
-
-          html = `${topic} <span class="badge text-bg-secondary">${criterias.length}</span>`;
-          $("#selectedtopic").html(html);
-
-          if (maturityLevel >= 0) {
-            html = `${maturityText(
-              maturityLevel
-            )} <span class="badge text-bg-secondary">${
-              criterias.length
-            }</span>`;
-            $("#selectedmaturity").html(html);
-          }
-
-          $("#dataTable").bootstrapTable({ data: criterias });
-        });
-      });
-
-      const tooltipTriggerList = document.querySelectorAll(
-        '[data-bs-toggle="tooltip"]'
-      );
-      const tooltipList = [...tooltipTriggerList].map(
-        (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
-      );
-    </script>
   </body>
 </html>

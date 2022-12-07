@@ -5,16 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Health Assessor Model Viewer - Topics</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
 
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/bootstrap-table@1.21.0/dist/bootstrap-table.min.js"></script>
-    <script src="assets/app.js"></script>
+    <script src="assets/js/app.js"></script>
   </head>
   <body>
-    <div id="navbar"></div>
+    <div id="navbar">
+      <nav class="navbar navbar-expand-lg bg-light sticky-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html"
+            >Health Assessor Model Viewer</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav nav-pills">
+              <li class="nav-item">
+                <a id="nav-1" class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a id="nav-2" class="nav-link" href="areas.html">Areas</a>
+              </li>
+              <li class="nav-item">
+                <a id="nav-3" class="nav-link" href="topics.html">Topics</a>
+              </li>
+              <li class="nav-item">
+                <a id="nav-4" class="nav-link" href="criteria.html">Criteria</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">|</a>
+              </li>
+              <li class="nav-item">
+                <a id="nav-5" class="nav-link disabled" href="areas.html"
+                  >Areas v2</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  id="nav-6"
+                  class="nav-link"
+                  href="topicsv2.html"
+                  data-bs-toggle="tooltip"
+                  data-bs-title="Version with Components"
+                >
+                  Topics v2
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  id="nav-7"
+                  class="nav-link"
+                  href="criteriav2.html"
+                  data-bs-toggle="tooltip"
+                  data-bs-title="Version with Components"
+                >
+                  Criteria v2
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
 
     <div class="container container-fluid p-2">
       <div class="row">
@@ -24,7 +89,8 @@
               class="btn btn-secondary btn-sm dropdown-toggle position-relative"
               type="button"
               data-bs-toggle="dropdown"
-              aria-expanded="false">
+              aria-expanded="false"
+            >
               Areas
             </button>
             <ul class="dropdown-menu" id="dditems"></ul>
@@ -42,36 +108,42 @@
 
     <div
       id="modelContainer"
-      class="container container-fluid table-responsive p-2">
+      class="container container-fluid table-responsive p-2"
+    >
       <table
         id="dataTable"
         data-search="true"
         data-search-highlight="true"
-        data-pagination="true">
+        data-pagination="true"
+      >
         <thead class="table-light">
           <tr>
             <th
               data-field="id"
               data-sortable="true"
-              data-search-highlight-formatter="customSearchFormatter">
+              data-search-highlight-formatter="customSearchFormatter"
+            >
               Id
             </th>
             <th
               data-field="areaName"
               data-sortable="true"
-              data-search-highlight-formatter="customSearchFormatter">
+              data-search-highlight-formatter="customSearchFormatter"
+            >
               Area
             </th>
             <th
               data-field="name"
               data-sortable="true"
-              data-search-highlight-formatter="customSearchFormatter">
+              data-search-highlight-formatter="customSearchFormatter"
+            >
               Name
             </th>
             <th
               data-field="description"
               data-sortable="true"
-              data-search-highlight-formatter="customSearchFormatter">
+              data-search-highlight-formatter="customSearchFormatter"
+            >
               Description
             </th>
           </tr>
@@ -83,13 +155,7 @@
       $(() => {
         let area = localStorage.getItem("area");
 
-        if (
-          area === null ||
-          area === "null" ||
-          area === undefined ||
-          area === "undefined"
-        )
-          area = "";
+        if (area === "null" || area === "undefined") area = "";
 
         fetchData().then(() => {
           let html = `<li><a class="dropdown-item" href="javascript:void(0);" onclick="applyFilterTopics(null);">(All)</a></li>`;

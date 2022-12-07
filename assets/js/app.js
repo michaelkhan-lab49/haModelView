@@ -5,28 +5,6 @@ const urls = [
     "./json/criterias.json",
 ];
 
-const urlsv2 = [
-    './jsonv2/availability.json',
-    './jsonv2/engineering.json',
-    './jsonv2/incident-management.json',
-    './jsonv2/maintainability.json',
-    './jsonv2/monitoring.json',
-    './jsonv2/scalability.json',
-    './jsonv2/sdlc-process.json',
-];
-
-const gitpath = 'https://raw.githubusercontent.com/lab49/healthAssessorModel/main/cmm2';
-
-const giturls = [
-    { file: 'availability.json', token: 'GHSAT0AAAAAAB3WTIAN7TFY7HVBABQBTBQ4Y4PABZQ', },
-    { file: 'engineering.json', token: 'GHSAT0AAAAAAB3WTIANMDCNYB7LJHOX3HHEY4PACKA', },
-    { file: 'incident-management.json', token: 'GHSAT0AAAAAAB3WTIAMVEQRONNYXFSECX5GY4PADWA', },
-    { file: 'maintainability.json', token: 'GHSAT0AAAAAAB3WTIAM4S5NEC7OXWLSVVLGY4PADXA', },
-    { file: 'monitoring.json', token: 'GHSAT0AAAAAAB3WTIAN7DDDPIAM77AJLQZSY4PADYQ', },
-    { file: 'scalability.json', token: 'GHSAT0AAAAAAB3WTIAMTGQIMFKSBCOYFJHKY4PAD2A', },
-    { file: 'sdlc-process.json', token: 'GHSAT0AAAAAAB3WTIAM5ZKSASFGY6UO7D3EY4PAD3A', },
-];
-
 const maturities = [
     'Establishing',
     'Initial',
@@ -36,14 +14,16 @@ const maturities = [
     'Optimising',
 ];
 
-var model = {
-    domains: [],
-    areas: [],
-    topics: [],
-    criterias: [],
-};
+const maturitiesFull = [
+    'Establishing (L0)',
+    'Initial (L1)',
+    'Developing (L2)',
+    'Defined (L3)',
+    'Measurable (L4)',
+    'Optimising (L5)',
+];
 
-var modelv2 = {
+var model = {
     domains: [],
     areas: [],
     topics: [],
@@ -59,17 +39,32 @@ window.customSearchFormatter = function (value, searchText) {
         );
 };
 
-function maturityFormat(level) {
-    return `${maturities[level]} (L${level})`;
+function maturityLevel(level) {
+    if (isNaN(level)) {
+        level = level.replace('z', 's');
+        return maturities.findIndex(m => m === level);
+    }
+    return level;
 }
 
 function maturityText(level) {
-    return maturities[level];
+    let index = maturityLevel(level);
+    return maturitiesFull[index];
 }
 
-function maturityLevel(text) {
-    text = text.replace('z', 's');
-    return maturities.findIndex(m => m === text);
+function maturityCellStyle(value, row, index) {
+    var classes = [
+        "text-center text-bg-danger",
+        "text-center text-bg-light",
+        "text-center text-bg-warning",
+        "text-center text-bg-primary",
+        "text-center text-bg-info",
+        "text-center text-bg-success",
+    ]
+
+    return {
+        classes: classes[row.maturityLevel]
+    }
 }
 
 const fetchData = async () => {
@@ -106,77 +101,10 @@ const fetchData = async () => {
 
         model.criterias = reduceCriterias(resJson[3]);
 
-    } catch (err) {
-        console.log(err);
-    }
-};
-
-
-const fetchDatav2 = async () => {
-    try {
-        let res = await Promise.all(urlsv2.map((e) => fetch(e)));
-        let resJson = await Promise.all(res.map((e) => e.json()));
-        //resJson = resJson.map((e) => e.results);
-        console.log(resJson);
-
-        for (let i = 0; i < resJson.length; i++) {
-            const element = resJson[i];
-            console.log(element);
-        }
-
-        modelv2.topics = resJson
-
-        modelv2.topics = modelv2.topics.map((item) => {
-            return {
-                _id: item._id,
-                id: item._id,
-                name: item.name,
-                description: item.description,
-                domain: item.domain,
-                area: item.area,
-                components: item.components,
-                criterias: reduceComponentCriterias(item),
-            };
-        }).sort((a, b) => a.name.localeCompare(b.name));
-
-        modelv2.domains = resJson.map((item) => {
-            return { name: item.domain };
-        });
-
-        modelv2.areas = resJson.map((item) => {
-            return { name: item.area, topics: [], };
-        }).sort((a, b) => a.name.localeCompare(b.name));
-
-        modelv2.areas = [
-            ...new Map(modelv2.areas.map((item) => [item["name"], item])).values(),
-        ];
-
-        modelv2.criterias = resJson.reduce((prev, next) => {
-            let crs = reduceComponentCriterias(next);
-            /*
-            let topic = next;
-            let crs = next.components.reduce((prev, next) => {
-                let criteria = next.criteria.map((item) => {
-                    return {
-                        _id: item._id,
-                        id: item._id,
-                        version: 0,
-                        maturityLevel: maturityLevel(item.maturityLevel),
-                        maturityLevelText: maturityFormat(maturityLevel(item.maturityLevel)),
-                        name: item.name,
-                        topic: topic.name,
-                    };
-                });
-                return prev.concat(criteria);
-            }, []);
-            */
-            return prev.concat(crs);
-        }, []);
-
-        console.log(modelv2);
+        console.log(model);
 
     } catch (err) {
-        console.log(err);
+        console.error(err);
     }
 };
 
@@ -189,55 +117,24 @@ const groupBy = (keys) => (array) =>
         return objectsByKeyValue;
     }, {});
 
-function maturityCellStyle(value, row, index) {
-    var classes = [
-        "text-center text-bg-danger",
-        "text-center text-bg-light",
-        "text-center text-bg-warning",
-        "text-center text-bg-primary",
-        "text-center text-bg-info",
-        "text-center text-bg-success",
-    ]
-
-    return {
-        classes: classes[row.maturityLevel]
-    }
-}
-
 function reduceCriterias(criterias) {
     let result = criterias.map((item) => {
+        let matLvl = maturityLevel(item.versions[0].maturityLevel);
+        let matLvlTxt = maturityText(item.versions[0].maturityLevel);
+        let topicName = item.topic ? item.topic.name : '';
         return {
             id: item.id,
             versionId: item.versions[0].versionId,
-            maturityLevel: item.versions[0].maturityLevel,
-            maturityLevelText: maturityFormat(item.versions[0].maturityLevel),
+            maturityLevel: matLvl,
+            maturityLevelText: matLvlTxt,
             name: item.name,
             topicId: item.topic ? item.topic.id : item.topicId,
-            topicName: item.topic ? item.topic.name : null,
-            sort: (item.topic ? item.topic.name : null) + item.versions[0].maturityLevel + item.versions[0].versionId,
+            topicName: topicName,
+            sort: topicName + matLvl + item.versions[0].versionId,
         };
     });
 
     return result;
-}
-
-function reduceComponentCriterias(topic) {
-    return topic.components.reduce((prev, next) => {
-        let criteria = next.criteria.map((item) => {
-            return {
-                _id: item._id,
-                id: item._id,
-                version: 0,
-                maturityLevel: maturityLevel(item.maturityLevel),
-                maturityLevelText: maturityFormat(maturityLevel(item.maturityLevel)),
-                name: item.name,
-                topic: topic.name,
-                component: next.name,
-                sort: (topic.name ? topic.name : null) + next.name + maturityLevel(item.maturityLevel),
-            };
-        });
-        return prev.concat(criteria);
-    }, []);
 }
 
 function sortTopics(topics) {
@@ -565,15 +462,26 @@ function applyFilterCriteriaByMaturity(value) {
 }
 
 $(async () => {
-    $("#navbar").load("navbar.html");
-    //$("#footer").load("footer.html");
+    //$("#navbar").load("navbar.html");
 
-    await fetchDatav2();
     await fetchData();
 
-    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 
+    let path = $(location).attr('pathname').toLowerCase();
+    if (path.startsWith("/"))
+        path = path.substring(1);
+    //path = path.replace(".html", "");
+
+    var menuitem = $('#navbar').find('a.nav-link').filter(function () {
+        let url = $(this).attr('href')?.toLowerCase();
+        url = url?.substring(url?.lastIndexOf('/') + 1);
+        return url === path;
+    })[0];
+
+    let id = `#${menuitem.id}`;
+    $(id).addClass("active");
+    $(id).attr("aria-current", "page");
+    //$(id).css("background-color", "yellow");  aria-current="page"
 });
-
-
